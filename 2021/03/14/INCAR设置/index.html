@@ -1,0 +1,1357 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="VASP INCAR设置, alphaqzhang&#39;s blog">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>VASP INCAR设置 | alphaqzhang&#39;s blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="alphaqzhang's blog" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">alphaqzhang&#39;s blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>Index</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>Tags</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>Categories</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>Archives</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>About</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>Friends</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="Search" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">alphaqzhang&#39;s blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			Index
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			Tags
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			Categories
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			Archives
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			About
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			Friends
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/9.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">VASP INCAR设置</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/VASP/">
+                                <span class="chip bg-color">VASP</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/DFT/" class="post-category">
+                                DFT
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>Publish Date:&nbsp;&nbsp;
+                    2021-03-14
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>Update Date:&nbsp;&nbsp;
+                    2021-03-15
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>Word Count:&nbsp;&nbsp;
+                    4.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>Read Times:&nbsp;&nbsp;
+                    18 Min
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>Read Count:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="INCAR设置"><a href="#INCAR设置" class="headerlink" title="INCAR设置"></a>INCAR设置</h1><p><strong>金属</strong>：ISMEAR = 1; SIGMA = 0.2（grep “entropy T” OUTCAR 除以原子数与 0.001eV比较；若小于0.001，则OK，否则该SIGMA）</p>
+<p>绝缘体或半导体： ISMEAR = 0;SIGMA = 0.05</p>
+<p><strong>DOS</strong>  :ISMEAR = -5;  SIGMA的值可忽略</p>
+<p><strong>分子计算</strong>：ISMEAER = 0；SIGMA = 0.01</p>
+<p><strong>KPOINTS取值：</strong></p>
+<p>ka~30埃，for d band metals</p>
+<p>ka~25埃，for simple metals</p>
+<p>ka~20埃，for semiconductors</p>
+<p>ka~15埃，for insulators</p>
+<p><strong>几何结构优化</strong>：EDIFF = 1E-5</p>
+<p><strong>过渡态和频率计算</strong>：EDIFF = 1E-6或1E-7</p>
+<h2 id="磁性计算"><a href="#磁性计算" class="headerlink" title="磁性计算"></a>磁性计算</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">SYSTEM &#x3D; N2P</span><br><span class="line">ENCUT &#x3D; 520</span><br><span class="line">ISTART &#x3D; 0; ICHARG &#x3D; 2</span><br><span class="line">ISMEAR &#x3D; 0</span><br><span class="line">SIGMA&#x3D;0.05</span><br><span class="line">NSW&#x3D;100</span><br><span class="line">#PRECSYM&#x3D;0.01</span><br><span class="line">IBRION &#x3D; 2</span><br><span class="line">ISIF &#x3D; 2</span><br><span class="line">VOSKOWN &#x3D; 1</span><br><span class="line">ISPIN &#x3D; 2</span><br><span class="line">MAGMOM &#x3D; 1.0 -1.0 1.0 -1.0 6*0 #设置初始磁矩</span><br><span class="line">LORBIT &#x3D; 11</span><br><span class="line">LCHARG &#x3D; .FALSE.</span><br><span class="line">LWAVE &#x3D; .FALSE.</span><br><span class="line">EDIFF &#x3D; 0.00001</span><br><span class="line">EDIFFG &#x3D; -0.001</span><br><span class="line">NPAR&#x3D;4</span><br><span class="line">PREC &#x3D; A</span><br></pre></td></tr></table></figure>
+
+<h3 id="SOC"><a href="#SOC" class="headerlink" title="SOC"></a>SOC</h3><p>需要使用vasp_ncl版本计算</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">LMAXMIX&#x3D;4                # 4 for d, and 6 for f element</span><br><span class="line">GGA_COMPAT &#x3D; .FALSE.     # 提高计算精度</span><br><span class="line">MAGMOM &#x3D; 0 0 1            # 每个原子三个参数</span><br><span class="line">##SAXIS &#x3D; x y z           #定义一个方向</span><br><span class="line">ISYM &#x3D; 0                  #一般不用对称性，以免出错</span><br><span class="line">LNONCOLLINEAR &#x3D; .TRUE.    # 非线性</span><br><span class="line">LSORBIT &#x3D; .TRUE.          # SOC</span><br></pre></td></tr></table></figure>
+
+<p><strong>1. 非线性磁矩计算：【什么时候需要考虑非线性磁性计算？？】</strong><br>1）计算非磁性基态产生WAVECAR和CHGCAR文件（ISPIN=1？）。</p>
+<p>2）然后INCAR中加上<br>ISPIN=2<br>ICHARG=1 或 11  ！读取WAVECAR和CHGCAR文件</p>
+<p>LNONCOLLINEAR=.TRUE.<br>MAGMOM=<br>注意：</p>
+<p>①对于非线性磁矩计算，要在x, y 和 z方向分别加上磁矩，如</p>
+<p>MAGMOM = 1 0 0  0 1 0  ！表示第一个原子在x方向，第二个原子的y方向有磁矩<br>②在任何时候，指定MAGMOM值的前提是ICHARG=2（没有WAVECAR和CHGCAR文件）或者ICHARG=1 或11（有WAVECAR和CHGCAR文件），但是前一步的计算是非磁性的（ISPIN=1）。</p>
+<p><strong>2. 磁各向异性能（自旋轨道耦合）计算：</strong><br>注意： LSORBIT=.TRUE. 会自动打开LNONCOLLINEAR= .TRUE.选项，且自旋轨道计算只适用于PAW赝势，不适于超软赝势。<br>自旋轨道耦合效应<strong>就意味着能量对磁矩的方向存在依赖</strong>，即存在磁各向异性能（MAE），所以要定义初始磁矩的方向。如下：<br>LSORBIT = .TRUE.<br>SAXIS = s_x s_y s_z (quantisation axis for spin)<br>默认值： SAXIS=(0+,0,1)，即x方向有正的无限小的磁矩，Z方向有磁矩。</p>
+<p>要使初始的磁矩方向平行于选定方向，有以下两种方法：</p>
+<p>MAGMOM = x y z     ! local magnetic moment in x,y,z</p>
+<p>SAXIS = 0 0 1       ! quantisation axis parallel to z</p>
+<p>or<br>MAGMOM = 0 0 total_magnetic_moment</p>
+<p>​       ! local magnetic moment parallel to SAXIS （注意每个原子分别指定）<br>SAXIS = x y z</p>
+<p>   ! quantisation axis parallel to vector (x,y,z)，</p>
+<p>  如 0 0 1  两种方法原则上应该是等价的，但是实际上第二种方法更精确。第二种方法允许读取已存在的WAVECAR（来自线性或者非磁性计算）文件，并且继续另一个自旋方向的计算（改变SAXIS 值而MAGMOM保持不变）。当读取一个非线性磁矩计算的WAVECAR时，自旋方向会指定平行于SAXIS。</p>
+<p><strong>计算磁各向异性的推荐步骤是：</strong><br>1）首先计算线性磁矩以产生WAVECAR 和 CHGCAR文件（注意加入LMAXMIX，why?）。<br>2）然后INCAR中加入：</p>
+<p>LSORBIT = .TRUE.<br>ICHARG = 11</p>
+<p>   ! non selfconsistent run, read CHGCAR<br>   !或 ICHARG ==1 优化到易磁化轴，但此时应提高EDIFF的精度<br>LMAXMIX = 4</p>
+<p>  ! for d elements increase LMAXMIX to 4, f: LMAXMIX = 6</p>
+<p>  ! you need to set LMAXMIX already in the collinear calculation</p>
+<p>SAXIS = x y z</p>
+<p>​    ! direction of the magnetic field  如 0 0  1<br>NBANDS = 2 * number of bands of collinear run</p>
+<p>   ！ grep NBANDS OUTCAR</p>
+<p>ISYM=0  </p>
+<p>   !switch off symmetry (ISYM=0) when spin orbit coupling is selected</p>
+<p>GGA_COMPAT=.FALSE.</p>
+<p>  ！ it improves the numerical precision of GGA for non collinear calculations<br>LORBMOM=.TRUE.  </p>
+<p>​       !计算轨道磁矩</p>
+<p>继续计算，VASP会读取WAVECAR 和 CHGCAR将自旋量子化方向（磁场方向）平行于SAXIS方向。<br>最后可以比较各个方向磁矩时能量的不同。</p>
+<p>注意： 第二步使用自洽计算(ICHARG=1)原则上也是可以的，但是初始平行于SAXIS的磁场发生旋转，直到达到基态，如平行于易磁化轴，但这个过程会很慢且能量变化很小，而且如果收敛标准不是很严格的话，自洽计算会在未达到基态就停止。<br> 注意： VASP的输入输出的磁矩和类自旋量都会按照这个SAXIS方向，包括INCAR中的<br>MAGMOM行，OUTCAR和PROCAR文件中的总磁矩和局域磁矩，WAVECAR中的类自旋轨道和CHGCAR中的磁性密度。</p>
+<p>问题： ①第一步线性计算得到WAVECAR 和 CHGCAR文件，必须是静态计算的WAVECAR 和 CHGCAR文件吗？ 动态优化的可不可以？静态计算需要使用NUPDOWN 锁定磁矩吗？</p>
+<p>②进行非线性磁矩或自旋轨道耦合计算的时候，结构需不需要重新优化？  </p>
+<p>我现在的做法是：<br>先加入LMAXMIX = 4结构优化，然后仍然使用 LMAXMIX = 4 静态计算</p>
+<p>（ICHARG=2，LWAVE=.TRUE.,LCHARG=.TRUE.），</p>
+<p>然后进行高收敛标准的静态的soc自洽计算来考虑soc的影响，也不知对不对。</p>
+<h2 id="MD计算"><a href="#MD计算" class="headerlink" title="MD计算"></a>MD计算</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">SYSTEM &#x3D; CaCl-graphene</span><br><span class="line">ENCUT &#x3D; 520</span><br><span class="line">IALGO  &#x3D; 48</span><br><span class="line">ISTART &#x3D; 0; ICHARG &#x3D; 2</span><br><span class="line">ISMEAR &#x3D; 0</span><br><span class="line">IBRION &#x3D; 0  #模拟MD</span><br><span class="line">ISIF &#x3D; 4</span><br><span class="line">POTIM &#x3D; 1</span><br><span class="line">SIGMA&#x3D;0.05</span><br><span class="line">NSW&#x3D;10000</span><br><span class="line">#NBLOCK&#x3D; 1   #多少个时间步长，写一次CONTCAR，CHG和CHGCAR，PCDAT</span><br><span class="line">#KBLOCK&#x3D;50   #NBLOCK*KBLOCK 个步长写一次XDATCAR</span><br><span class="line">NELMIN&#x3D;8     #一般用6到8, 最小的电子scf数.太少的话,收敛的不好</span><br><span class="line">LREAL&#x3D;A</span><br><span class="line">#APACO&#x3D;10    #径向分布函数距离, 单位是埃</span><br><span class="line">#NPACO&#x3D;200   #径向分布函数插的点数.</span><br><span class="line">TEBEG&#x3D;300</span><br><span class="line">TEEND&#x3D;300</span><br><span class="line">SMASS &#x3D; 0 #NVT  # -3,NVE;-1,NVE可以控温，模拟退火；&gt;0，NVT系综</span><br><span class="line">EDIFF &#x3D; 1E-5</span><br><span class="line">#EDIFFG &#x3D; -0.05</span><br><span class="line">#NPAR&#x3D;4</span><br><span class="line">PREC &#x3D; Normal</span><br><span class="line">LWAVE&#x3D;.F</span><br><span class="line">LCHARG&#x3D;.F</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="能带-态密度计算"><a href="#能带-态密度计算" class="headerlink" title="能带/态密度计算"></a>能带/态密度计算</h2><p><strong>Scf-INCAR 重点参数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">IBRION &#x3D; -1</span><br><span class="line">NSW &#x3D; 0</span><br><span class="line">LCHARG &#x3D; .TRUE.</span><br><span class="line">LWAVE &#x3D; .TRUE.</span><br><span class="line">LORBIT&#x3D;11</span><br><span class="line">ISMEAR &#x3D; -5 （k 点大于4 ） or 1 or 0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>Dos-INCAR 重点参数</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">NBANDS&#x3D;XXX</span><br><span class="line">LORBIT&#x3D;11</span><br><span class="line">ISTART&#x3D;1</span><br><span class="line">ICHARG&#x3D;11</span><br><span class="line">EMIN&#x3D; -20</span><br><span class="line">EMAX&#x3D; 20</span><br><span class="line">NEDOS&#x3D;1000</span><br><span class="line">ISMEAR &#x3D; -5 （k 点大于4 ） or 1 or 0</span><br></pre></td></tr></table></figure>
+
+<p><strong>VASP纯泛函能带计算思路：</strong></p>
+<p>（1）在布里渊区撒点K-mesh做自洽计算得到CHGCAR文件；</p>
+<p>（2）读取上一步的CHGCAR（ICHARG = 11）, 用line-mode形式的K-path, 用VASPKIT 303生成KPOINTS,，做非自恰计算（电荷密度保持不变），得到line-mode上的每个K点的能级，从而得到能带。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">NBANDS&#x3D;XXX</span><br><span class="line">LORBIT&#x3D;11</span><br><span class="line">ISTART&#x3D;1</span><br><span class="line">ICHARG&#x3D;11</span><br><span class="line">EMIN&#x3D; -20</span><br><span class="line">EMAX&#x3D; 20</span><br><span class="line">NEDOS&#x3D;1000</span><br><span class="line">NBANDS &#x3D; 16 #对于体系较大的半导体，我们通常在算dos 和band structure 时需要增加能带数目(20%) </span><br><span class="line">ISMEAR&#x3D;0 or 1</span><br></pre></td></tr></table></figure>
+
+<p><strong>VASP计算杂化泛函</strong>的能带，不能直接读取纯泛函的CHGCAR文件做非自恰计算，所以不能直接用line-mode的KPOINTS。计算思路如下：</p>
+<p>（1）用VASPKIT303和251产生KPOINTS文件，同时包含布里渊区撒点的K点K-mesh和高对称点连线K-path。K-mesh使用正常的权重，K-path使用0权重。</p>
+<p>（2）（可省略）用纯泛函(比如PBE)基于(1)KPOINTS文件做自洽计算，产生WAVECAR文件用于加速下一步杂化泛函计算的收敛。</p>
+<p>（3）用杂化泛函(比如HSE06)基于(1)KPOINTS文件做自洽计算，直接得到每个K-path上每个0权重的K点的能级信息，从而得到能带信息。</p>
+<h2 id="杂化泛函"><a href="#杂化泛函" class="headerlink" title="杂化泛函"></a>杂化泛函</h2><p>HSE06泛函： a=0.25，ωω=0.2，</p>
+<p>HSE03泛函： a=0.25，ωω=0.3，</p>
+<p>PBE0泛函： a=0.25，ωω -&gt; 0，</p>
+<p>PBE泛函：a=0，ωω -&gt; \infinite，  <strong>LHFCALC控制是否做杂化泛函计算，HFSCREEN控制ω。</strong></p>
+<p><strong>HSE06</strong>计算需要添加的参数如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">LHFCALC &#x3D; .TRUE. ; HFSCREEN &#x3D; 0.2</span><br><span class="line">ALGO &#x3D; Damped ; TIME &#x3D; 0.4</span><br><span class="line"># PRECFOCK  &#x3D; Fast  ! used PRECFOCK &#x3D; Normal for high quality calculations</span><br><span class="line"># NKRED     &#x3D; 2     ! omit flag for high quality calculations</span><br></pre></td></tr></table></figure>
+
+<p><strong>HSE03</strong>计算需要添加的参数如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FCALC  &#x3D; .TRUE.</span><br><span class="line">ALGO &#x3D; Damped ; TIME &#x3D; 0.4</span><br><span class="line">HFSCREEN &#x3D; 0.3</span><br></pre></td></tr></table></figure>
+
+<p><strong>PBE0</strong>计算需要添加的参数如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LHFCALC &#x3D; .TRUE.</span><br><span class="line">ALGO &#x3D; Damped ; TIME &#x3D; 0.4</span><br></pre></td></tr></table></figure>
+
+<p><strong>B3LYP</strong>计算需要添加的参数如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">LHFCALC &#x3D; .TRUE. </span><br><span class="line">GGA     &#x3D; B3 </span><br><span class="line">AEXX    &#x3D; 0.2</span><br><span class="line">AGGAX   &#x3D; 0.72 </span><br><span class="line">AGGAC   &#x3D; 0.81 </span><br><span class="line">ALDAC   &#x3D; 0.19</span><br><span class="line">ALGO &#x3D; Damped ; TIME &#x3D; 0.4</span><br></pre></td></tr></table></figure>
+
+<p><strong>Hartree-Fock</strong>计算需要添加的参数如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">LHFCALC &#x3D; .TRUE. </span><br><span class="line">AEXX    &#x3D; 1.0</span><br><span class="line">ALDAC   &#x3D; 0.0 </span><br><span class="line">AGGAC   &#x3D; 0.0</span><br><span class="line">ALGO &#x3D; Damped ; TIME &#x3D; 0.4</span><br></pre></td></tr></table></figure>
+
+
+
+<p>综上一般HSE06的计算输入文件可以写为：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">##### initial I&#x2F;O #####</span><br><span class="line">SYSTEM &#x3D; Hybird Functional</span><br><span class="line"># KPAR &#x3D; 4       </span><br><span class="line">NCORE &#x3D; 5 </span><br><span class="line">ISTART &#x3D; 1 </span><br><span class="line">ICHARG &#x3D; 1 </span><br><span class="line">LWAVE &#x3D; .TRUE. </span><br><span class="line">LCHARG &#x3D; .TRUE.</span><br><span class="line">LVTOT &#x3D; .FALSE.</span><br><span class="line">LVHAR &#x3D; .FALSE.</span><br><span class="line">LELF &#x3D; .FALSE. </span><br><span class="line">LORBIT &#x3D; 11 </span><br><span class="line">NEDOS &#x3D; 1000</span><br><span class="line"></span><br><span class="line">##### SCF #####</span><br><span class="line">ENCUT &#x3D; 500</span><br><span class="line">ISMEAR &#x3D; 0 </span><br><span class="line">SIGMA &#x3D; 0.05</span><br><span class="line">EDIFF &#x3D; 1E-6</span><br><span class="line">NELMIN &#x3D; 5 </span><br><span class="line">NELM &#x3D; 300 </span><br><span class="line">GGA &#x3D; PE </span><br><span class="line">LREAL &#x3D; .FALSE.</span><br><span class="line"># PREC &#x3D; Accurate</span><br><span class="line"># ISYM &#x3D; 3</span><br><span class="line"></span><br><span class="line">##### Geo opt #####</span><br><span class="line">EDIFFG &#x3D; -0.01</span><br><span class="line">IBRION &#x3D; 2</span><br><span class="line">POTIM &#x3D; 0.2 </span><br><span class="line">NSW &#x3D; 0 # no Geo_opt</span><br><span class="line">ISIF &#x3D; 3  # 2 not optimize cell</span><br><span class="line"></span><br><span class="line">#### HSE ####</span><br><span class="line">LHFCALC &#x3D; .TRUE. </span><br><span class="line">AEXX   &#x3D;  0.25        </span><br><span class="line">HFSCREEN &#x3D; 0.2         </span><br><span class="line">ALGO &#x3D; ALL # or Damped</span><br><span class="line">TIME   &#x3D;  0.4</span><br></pre></td></tr></table></figure>
+
+<p>其他参数：</p>
+<p>AGGAX = 1.0-AEXX，交换泛函中的GGA的成分</p>
+<p>AGGAC = 1.0，相关泛函中的GGA的成分</p>
+<p>ALDAC = 1.0 ，相关泛函中的LDA的成分</p>
+<h2 id="外加电场"><a href="#外加电场" class="headerlink" title="外加电场"></a>外加电场</h2><p>EFIELD控制电场力的大小（eV/Angstrom）。F=qE 所以对应电场的单位是E=F/q， 因而场强单位是 <em>V/Angstrom</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">EFIELD &#x3D; 0.05</span><br><span class="line">IDIPOL &#x3D; 3 #1&#x2F;2&#x2F;3代表x&#x2F;y&#x2F;z方向</span><br><span class="line">LDIPOL &#x3D; .TRUE.</span><br></pre></td></tr></table></figure>
+
+<p>一开始电场不要加的太大，电场的强度逐渐加上去。比如一开始做一个电场强度很小的计算，得到了收敛的电荷密度和波函数之后，再增加电场强度，读入上一步的电荷和波函数进行计算。。。。。这样的方式逐渐增加电场强度。</p>
+<p>另外也要注意，这里所加的电场所能处理的体系，即电场的方向上是要有真空层的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ISTART &#x3D; 1</span><br><span class="line">ICHARG &#x3D; 1</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="Bader电荷计算"><a href="#Bader电荷计算" class="headerlink" title="Bader电荷计算"></a>Bader电荷计算</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LAECHG &#x3D; .TRUE. （静态计算）</span><br></pre></td></tr></table></figure>
+
+<p>增加网格 NGXF NGYF NGZF</p>
+<ol>
+<li><p>chgsum.pl  AECCAR0   AECCAR2   &gt;   CHGCAR_sum</p>
+</li>
+<li><p>bader  CHGCAR   -ref  CHGCAR_sum</p>
+<p>生成 <strong>ACF.data</strong>, AVF.dat,   BCF.dat</p>
+</li>
+</ol>
+<h2 id="频率计算"><a href="#频率计算" class="headerlink" title="频率计算"></a>频率计算</h2><p>INCAR：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">IBRION &#x3D; 5</span><br><span class="line">POTIM &#x3D; 0.015 #或者0.01-0.02范围的值都可，闲的没事也可以测试下。</span><br><span class="line">NFREE &#x3D; 2</span><br><span class="line">NSW &#x3D; 1   #1-10000的值均可，没事也可以测试下</span><br></pre></td></tr></table></figure>
+
+<p>POSCAR: 将表面的原子固定住，使用sed命名，或者自己写个小脚本来处理。</p>
+<p>KPOINTS，一般来说，很多人都使用和优化过程一样的KPOINTS，但从我个人的经验来看，使用更小的K点来计算则是一个更加有效，节约机时的做法。但前提是你要做足够的测试。</p>
+<p>如果收敛困难的体系，可以保存优化步骤的WAVECAR用于下一步的频率计算。</p>
+<h2 id="声子谱计算"><a href="#声子谱计算" class="headerlink" title="声子谱计算"></a>声子谱计算</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">SYSTEM &#x3D; N2P</span><br><span class="line">ENCUT &#x3D; 520</span><br><span class="line">IALGO  &#x3D; 38</span><br><span class="line">#ISTART &#x3D; 0; ICHARG &#x3D; 2</span><br><span class="line">ISMEAR &#x3D; 0</span><br><span class="line">SIGMA&#x3D;0.05</span><br><span class="line">NSW&#x3D;1</span><br><span class="line">#PRECSYM&#x3D;0.01</span><br><span class="line">IBRION &#x3D; 8</span><br><span class="line">VOSKOWN &#x3D; 1</span><br><span class="line">ISIF &#x3D; 2</span><br><span class="line">ISPIN &#x3D; 2</span><br><span class="line">LWAVE &#x3D; .FALSE</span><br><span class="line">LCHARG &#x3D; .FALSE</span><br><span class="line">LREAL  &#x3D; .FALSE.</span><br><span class="line">ADDGRID &#x3D; .TRUE</span><br><span class="line">#ISPIN&#x3D;2</span><br><span class="line">EDIFF &#x3D; 1E-7</span><br><span class="line">EDIFFG &#x3D; -0.001（不能是负值吗？）</span><br><span class="line">PREC &#x3D; A</span><br></pre></td></tr></table></figure>
+
+<p> <strong>数据处理</strong></p>
+<p><strong>a) 根据vasprun.xml文件生成力学文件FORCE_CONSTRAINS</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phonopy --fc vasprun.xml</span><br></pre></td></tr></table></figure>
+
+<p><strong>b) 编辑band.conf文件，该文件给出了高对称点路径的信息</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ATOM_NAME &#x3D; In Se</span><br><span class="line">DIM &#x3D; 4 4 1</span><br><span class="line">BAND &#x3D; 0.5 0.0 0.0  0.0 0.0 0.0  0.333333 0.333333 0.0  0.5 0.0 0.0</span><br><span class="line">FORCE_CONSTANTS &#x3D; READ</span><br></pre></td></tr></table></figure>
+
+<p>Note：</p>
+<p>line 1：元素名称，顺序与POSCAR保持一致</p>
+<p>line 2：建立超胞的大小</p>
+<p>line 3：高对称点路径，每组高对称点之间用两个空格隔开</p>
+<p>line 4：表示读取力常数文件FORCE_CONSTANTS</p>
+<p><strong>c) 生成band.yaml文件</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phonopy --dim&#x3D;&quot;4 4 1&quot; -c POSCAR-unitcell band.conf</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phonopy --dim&#x3D;&quot;3 3 1&quot; -c  POSCAR-unitcell -p band.conf</span><br></pre></td></tr></table></figure>
+
+<p>Note：4 4 1为建立超胞的大小</p>
+<p><strong>d) 得到声子谱数据文件PBAND.dat文件</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">phonopy-bandplot  --gnuplot&gt; PBAND.dat</span><br></pre></td></tr></table></figure>
+
+<p>Note: 高对称点标注说明：phonopy软件默认在两个高对称点之间打点51个，且在PBAND.dat中每组高对称点数据以一个空行分割，据此即可得到完整的声子谱图像</p>
+<h2 id="弹性常数计算"><a href="#弹性常数计算" class="headerlink" title="弹性常数计算"></a>弹性常数计算</h2><p>方法一：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">SYSTEM &#x3D;Si</span><br><span class="line">ISTART &#x3D; 0</span><br><span class="line">ICHARG &#x3D; 2</span><br><span class="line">PREC&#x3D;Accurate #精度提高</span><br><span class="line">LREAL &#x3D; .F.</span><br><span class="line">IBRION &#x3D; 6  #计算弹性常数</span><br><span class="line">ISIF&#x3D;3          #计算弹性常数</span><br><span class="line">NFREE&#x3D;4     #计算弹性常数</span><br><span class="line">NSW &#x3D; 100</span><br><span class="line">POTIM &#x3D; 0.5</span><br><span class="line">EDIFFG &#x3D;-0.02</span><br><span class="line">ENCUT &#x3D;500 eV   #精度提高</span><br><span class="line">SPIN &#x3D; 1</span><br><span class="line">NELM &#x3D; 60</span><br><span class="line">EDIFF &#x3D; 0.1E-04</span><br><span class="line">LCHARG &#x3D; .F.</span><br><span class="line">LWAVE &#x3D; .F.</span><br><span class="line">ISMEAR &#x3D; 0</span><br><span class="line">SIGMA &#x3D; 0.2</span><br><span class="line">ALGO&#x3D;Fast</span><br><span class="line">PSTRESS &#x3D;0 （0Pa） #单位为 0.1Gpa</span><br></pre></td></tr></table></figure>
+
+<p>方法二：</p>
+<p>VASPKIT和VASP计算晶体的弹性常数具体计算步骤分为：</p>
+<p>1，准备优化彻底的POSCAR文件，注意通常采用标准的惯用原胞计算弹性常数，如果不确信POSCAR文件中是否是标准的惯用原胞，可以用VASPKIT-603/604生成标准结构；</p>
+<p>2，运行VASPKIT 选择102生成KPOINTS，由于计算弹性常数对K-mesh要求很高，因此对于半导体（金属体）体系，生成K点的精度应不小于0.03(0.02)×2π0.03(0.02)×2π \AA−1\AA−1</p>
+<p>3，INCAR参考设置如下；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Global Parameters</span><br><span class="line">  ISTART &#x3D;  0        </span><br><span class="line">  LREAL  &#x3D;  F      </span><br><span class="line">  PREC   &#x3D;  High  （截断能设置默认值1.5-2倍）</span><br><span class="line">  LWAVE  &#x3D; F       </span><br><span class="line">  LCHARG &#x3D; F     </span><br><span class="line">  ADDGRID&#x3D; .TRUE.    </span><br><span class="line">Electronic Relaxation</span><br><span class="line">  ISMEAR &#x3D;  0          </span><br><span class="line">  SIGMA  &#x3D;  0.05       </span><br><span class="line">  NELM   &#x3D;  40           </span><br><span class="line">  NELMIN &#x3D;  4           </span><br><span class="line">  EDIFF  &#x3D;  1E-08       </span><br><span class="line">Ionic Relaxation</span><br><span class="line">  NELMIN &#x3D;  6          </span><br><span class="line">  NSW    &#x3D;  100         </span><br><span class="line">  IBRION &#x3D;  2           </span><br><span class="line">  ISIF   &#x3D;  2    （切记选择2,如果选择3会把施加应变后原胞重新优化成平衡原胞）</span><br><span class="line">  EDIFFG &#x3D; -1E-02</span><br></pre></td></tr></table></figure>
+
+<p>4，准备VPKIT.in文件并设置第一行为1（预处理）；运行VASPKIT并选择201, 将生成用于计算弹性常数文件；</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1                    ! 设置1将产生计算弹性常数的输入文件，2则计算弹性常数</span><br><span class="line">3D                   ! 2D为二维体系，3D为三维体系</span><br><span class="line">7                    ! 7个应变</span><br><span class="line">-0.015 -0.010 -0.005 0.000 0.005 0.010 0.015  ! 应变变化范围</span><br></pre></td></tr></table></figure>
+
+<p>运行VASPKIT 201后输出一下信息，在批量提交任务；</p>
+<p>5.任务完成后，VPKIT.in第一行改为2；再运行vaspkit 201 即可。算出来的弹性系数要乘上真空层高度。</p>
+<h2 id="光学性质计算"><a href="#光学性质计算" class="headerlink" title="光学性质计算"></a>光学性质计算</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ISTART &#x3D; 1</span><br><span class="line">ICHARG&#x3D;10            #非自洽计算，读取scf计算得到的CHG</span><br><span class="line">LOPTICS &#x3D; .TRUE.    #计算光学性质</span><br><span class="line">CSHIFT &#x3D; 0.1            #实部光响应的偏移量</span><br><span class="line">PREC&#x3D;Accurate        #计算光学性质需提高精度</span><br><span class="line">NBANDS&#x3D;160          #半导体计算光学性质应为本身bands的2-3倍</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="压电常数计算"><a href="#压电常数计算" class="headerlink" title="压电常数计算"></a>压电常数计算</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">LEPSILON&#x3D;.TRUE.</span><br><span class="line">IBRION&#x3D; 8</span><br></pre></td></tr></table></figure>
+
+<p><strong>半导体、绝缘体压电计算步骤：</strong></p>
+<p><strong>先建一系列结构；</strong></p>
+<p><strong>clamped-ion计算：直接静态计算</strong></p>
+<p><strong>relaxed-ion计算：先用ISIF=2优化，再静态计算,静态计算中加入</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DIPOL &#x3D; 0.25 0.25 0.25</span><br><span class="line">LCALCPOL &#x3D; .TRUE.</span><br></pre></td></tr></table></figure>
+
+<p><strong>#手动计算极化时，NGX、NGY、NGZ必须相同，否则对电偶极矩的积分结果会出错。</strong></p>
+<h2 id="模拟STM"><a href="#模拟STM" class="headerlink" title="模拟STM"></a>模拟STM</h2><ol>
+<li><p>优化结构</p>
+</li>
+<li><p>SCF计算，得到波函数和电荷密度文件</p>
+</li>
+<li><p>PARCHG 文件 生成，这个文件结构和CHGCAR一样</p>
+</li>
+</ol>
+<p>a) 加的参数 LPARD=.TRUE. 这个参数计算 PARCHG 部分电荷 决定性的参数 NBMOD=-3 决定性的参数 EINT=-0.1 能量的间隙具体的参数含义参看说明书</p>
+<p>b) 加入INCAR 参数设置如下</p>
+<p>LPARD=.TRUE. NBMOD=-3 EINT=-0.1</p>
+<p>正负偏压相对于sample，如果是正的，则fermi level 会降低，EINT=正值，如果是负偏压，则相反。</p>
+<p>在INCAR里可设置：</p>
+<p>在INCAR里面设置： STM= STM1 STM2 STM3 STM4 STM5 STM1 最小Z坐标 STM2 最大Z坐标 = STM1+ 49.5 * STM3 STM3 Z坐标之间的间隔 STM4 G矢量的截断能，既考虑到H<em>2G</em>2/me &lt; |STM4|的波失。当此值为负时，在波函数上讲做一个窗函数：STM(4) STM(5) 费米能及附近的能量窗（一个范围）及考虑Eferm ± STM(5)eV 能量窗内的波函数，为了保证有50 个Z点，STM2取为 STM1+ 49.5 * STM3。</p>
+<ol start="4">
+<li>当有了PARCHG 文件，就可以用看图软件看了，一般的有vesta p4vasp#</li>
+</ol>
+<h2 id="带分解电荷密度"><a href="#带分解电荷密度" class="headerlink" title="带分解电荷密度"></a>带分解电荷密度</h2><p>第一种Partial Charge分析的INCAR，这样的INCAR给出的是指定能带，指定K点所对应的Partial Charge。分析导带、价带等的Partial Charge特性，通常采用的都是这种模式。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ISTART &#x3D;      1    （job   : 0-new  1-cont  2-samecut</span><br><span class="line">ICHARG &#x3D;      1      charge: 1-file 2-atom 10-const）</span><br><span class="line">LPARD&#x3D;.TRUE.</span><br><span class="line">IBAND&#x3D; 20 21 22 23 （能带的序号，即第几条）</span><br><span class="line">KPUSE&#x3D; 1 2 3 4  （某段能带（两个高对称点间）之间的第几个K点，在KPOINTS中需要输入这两个高对称点的坐标）</span><br><span class="line">LSEPB&#x3D;.TRUE.</span><br><span class="line">LSEPK&#x3D;.TRUE.</span><br></pre></td></tr></table></figure>
+
+<p>第二种Partial Charge分析的INCAR，这样的INCAR给出的是在[-10.3 -5.1]能量之间的Partial Charge。这种模式适合于分析某个能量区间内的波函数的性质。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">ISTART &#x3D;      1    （job   : 0-new  1-cont  2-samecut</span><br><span class="line">ICHARG &#x3D;      1      charge: 1-file 2-atom 10-const）</span><br><span class="line">LPARD&#x3D;.TRUE.</span><br><span class="line">EINT &#x3D; -10.3 -5.1</span><br><span class="line">LSEPB&#x3D;.FALSE.</span><br><span class="line">LSEPK&#x3D;.FALSE.</span><br></pre></td></tr></table></figure>
+
+<p>第三种Partial Charge分析的INCAR，这样的INCAR给出的是从[Ef-1.0 Ef]能量之间的Partial Charge。这种模式最利于分析费米面附近的波函数的性质。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">ISTART &#x3D;      1    （job   : 0-new  1-cont  2-samecut</span><br><span class="line">ICHARG &#x3D;      1      charge: 1-file 2-atom 10-const）</span><br><span class="line">LPARD&#x3D;.TRUE.</span><br><span class="line">NBMOD&#x3D;-3</span><br><span class="line">EINT &#x3D; -1</span><br><span class="line">LSEPB&#x3D;.FALSE.</span><br><span class="line">LSEPK&#x3D;.FALSE.</span><br></pre></td></tr></table></figure>
+
+<p>计算能带的部分电荷密度时，除了所需的四个文件（INCAR、KPOINTS、POSCAR、POTCAR），还需将WAVECAR、CHGCAR拷入文件夹。在INCAR中加入上述第一种情况的那些参数，在KPOINTS中修改成该条能带中某两个高对称点的坐标</p>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        Author:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Zhang Quan</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        Link:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://zhangquan2018.github.io/2021/03/14/INCAR%E8%AE%BE%E7%BD%AE/">https://zhangquan2018.github.io/2021/03/14/INCAR%E8%AE%BE%E7%BD%AE/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        Reprint policy:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    All articles in this blog are used except for special statements
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    reprint polocy. If reproduced, please indicate source
+                    <a href="/about" target="_blank">Zhang Quan</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>Copied successfully, please follow the reprint policy of this article</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">more</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/VASP/">
+                                    <span class="chip bg-color">VASP</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;Current
+            </div>
+            <div class="card">
+                <a href="/2021/03/14/INCAR%E8%AE%BE%E7%BD%AE/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="VASP INCAR设置">
+                        
+                        <span class="card-title">VASP INCAR设置</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            关于VASP输入文件INCAR的介绍
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/DFT/" class="post-category">
+                                    DFT
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/VASP/">
+                        <span class="chip bg-color">VASP</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                Next&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/03/14/hello-world/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/12.jpg" class="responsive-img" alt="Hello World">
+                        
+                        <span class="card-title">Hello World</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            Zhang Quan
+                            
+                        </span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;TOC</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 0px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">Zhang Quan</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">4.3k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:951135852@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=951135852" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 951135852" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;Search</span>
+            <input type="search" id="searchInput" name="s" placeholder="Please enter a search keyword"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
