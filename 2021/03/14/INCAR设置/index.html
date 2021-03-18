@@ -379,7 +379,7 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-16
+                    2021-03-18
                 </div>
                 
 
@@ -427,25 +427,25 @@
 <p>ka~15埃，for insulators</p>
 <p><strong>几何结构优化</strong>：EDIFF = 1E-5</p>
 <p><strong>过渡态和频率计算</strong>：EDIFF = 1E-6或1E-7</p>
-<h2 id="磁性计算"><a href="#磁性计算" class="headerlink" title="磁性计算"></a>磁性计算</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">SYSTEM &#x3D; N2P
-ENCUT &#x3D; 520
-ISTART &#x3D; 0; ICHARG &#x3D; 2
-ISMEAR &#x3D; 0
-SIGMA&#x3D;0.05
-NSW&#x3D;100
-#PRECSYM&#x3D;0.01
-IBRION &#x3D; 2
-ISIF &#x3D; 2
-VOSKOWN &#x3D; 1
-ISPIN &#x3D; 2
-MAGMOM &#x3D; 1.0 -1.0 1.0 -1.0 6*0 #设置初始磁矩
-LORBIT &#x3D; 11
-LCHARG &#x3D; .FALSE.
-LWAVE &#x3D; .FALSE.
-EDIFF &#x3D; 0.00001
-EDIFFG &#x3D; -0.001
-NPAR&#x3D;4
-PREC &#x3D; A<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="磁性计算"><a href="#磁性计算" class="headerlink" title="磁性计算"></a>磁性计算</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">SYSTEM <span class="token operator">=</span> N2P
+ENCUT <span class="token operator">=</span> <span class="token number">520</span>
+ISTART <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> ICHARG <span class="token operator">=</span> <span class="token number">2</span>
+ISMEAR <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token assign-left variable">SIGMA</span><span class="token operator">=</span><span class="token number">0.05</span>
+<span class="token assign-left variable">NSW</span><span class="token operator">=</span><span class="token number">100</span>
+<span class="token comment">#PRECSYM=0.01</span>
+IBRION <span class="token operator">=</span> <span class="token number">2</span>
+ISIF <span class="token operator">=</span> <span class="token number">2</span>
+VOSKOWN <span class="token operator">=</span> <span class="token number">1</span>
+ISPIN <span class="token operator">=</span> <span class="token number">2</span>
+MAGMOM <span class="token operator">=</span> <span class="token number">1.0</span> -1.0 <span class="token number">1.0</span> -1.0 <span class="token number">6</span>*0 <span class="token comment">#设置初始磁矩</span>
+LORBIT <span class="token operator">=</span> <span class="token number">11</span>
+LCHARG <span class="token operator">=</span> .FALSE.
+LWAVE <span class="token operator">=</span> .FALSE.
+EDIFF <span class="token operator">=</span> <span class="token number">0.00001</span>
+EDIFFG <span class="token operator">=</span> -0.001
+<span class="token assign-left variable">NPAR</span><span class="token operator">=</span><span class="token number">4</span>
+PREC <span class="token operator">=</span> A<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="SOC"><a href="#SOC" class="headerlink" title="SOC"></a>SOC</h3><p>需要使用vasp_ncl版本计算</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">LMAXMIX</span><span class="token operator">=</span><span class="token number">4</span>                <span class="token comment"># 4 for d, and 6 for f element</span>
@@ -1042,48 +1042,50 @@ EINT <span class="token operator">=</span> -1
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="far fa-dot-circle"></i>&nbsp;本篇
-            </div>
+                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2021/03/14/INCAR%E8%AE%BE%E7%BD%AE/">
+                <a href="/2021/03/16/introduction%20to%20matminer/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="VASP INCAR设置">
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Matminer入门">
                         
-                        <span class="card-title">VASP INCAR设置</span>
+                        <span class="card-title">Matminer入门</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            关于VASP输入文件INCAR的介绍
+                            使用Matminer进行材料科学机器学习初步
                         
                     </div>
                     <div class="publish-info">
-                            <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-14
-                            </span>
+                        <span class="publish-date">
+                            <i class="far fa-clock fa-fw icon-date"></i>2021-03-16
+                        </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/DFT/" class="post-category">
-                                    DFT
+                            <a href="/categories/Machine-Learning/" class="post-category">
+                                    Machine Learning
                                 </a>
                             
                             
                         </span>
                     </div>
                 </div>
-
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/VASP/">
-                        <span class="chip bg-color">VASP</span>
+                    <a href="/tags/Machine-Learning/">
+                        <span class="chip bg-color">Machine Learning</span>
+                    </a>
+                    
+                    <a href="/tags/Matminer/">
+                        <span class="chip bg-color">Matminer</span>
                     </a>
                     
                 </div>
@@ -1268,12 +1270,16 @@ EINT <span class="token operator">=</span> -1
 <style>
     .aplayer .aplayer-lrc p {
         
+        display: none;
+        
         font-size: 12px;
         font-weight: 700;
         line-height: 16px !important;
     }
 
     .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
         
         font-size: 15px;
         color: #42b983;
@@ -1327,7 +1333,7 @@ EINT <span class="token operator">=</span> -1
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">4.2k</span>&nbsp;字
+                class="white-color">7.4k</span>&nbsp;字
             
             
             

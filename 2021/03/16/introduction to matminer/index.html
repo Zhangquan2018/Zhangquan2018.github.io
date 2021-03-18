@@ -1,0 +1,1878 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="Matminer入门, Alphaqzhang&#39;s blog">
+    <meta name="description" content="">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <title>Matminer入门 | Alphaqzhang&#39;s blog</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+
+    <script src="/libs/jquery/jquery.min.js"></script>
+
+<meta name="generator" content="Hexo 5.4.0"><link rel="alternate" href="/atom.xml" title="Alphaqzhang's blog" type="application/atom+xml">
+</head>
+
+
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">Alphaqzhang&#39;s blog</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">Alphaqzhang&#39;s blog</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/6.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">Matminer入门</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        padding: 35px 0 15px 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        padding-bottom: 30px;
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+
+        position: absolute;
+        right: 23.5vw;
+        display: block;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Machine-Learning/">
+                                <span class="chip bg-color">Machine Learning</span>
+                            </a>
+                        
+                            <a href="/tags/Matminer/">
+                                <span class="chip bg-color">Matminer</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/Machine-Learning/" class="post-category">
+                                Machine Learning
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2021-03-16
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2021-03-16
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    3.2k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    20 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+        </div>
+        <hr class="clearfix">
+
+        
+        <!-- 是否加载使用自带的 prismjs. -->
+        <link rel="stylesheet" href="/libs/prism/prism.css">
+        
+
+        
+
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">import</span> pymatgen<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">print</span><span class="token punctuation">(</span>pymatgen<span class="token punctuation">.</span>__version__<span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p> 2021.2.16</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> matminer<span class="token punctuation">.</span>datasets <span class="token keyword">import</span> get_available_datasets
+get_available_datasets<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>  boltztrap_mp: Effective mass and thermoelectric properties of 8924 compounds in The  Materials Project database that are calculated by the BoltzTraP software package run on the GGA-PBE or GGA+U density functional theory calculation results. The properties are reported at the temperature of 300 Kelvin and the carrier concentration of 1e18 1/cm3.</p>
+<p>  brgoch_superhard_training: 2574 materials used for training regressors that predict shear and bulk modulus.<br>  castelli_perovskites: 18,928 perovskites generated with ABX combinatorics, calculating gllbsc band gap and pbe structure, and also reporting absolute band edge positions and heat of formation.</p>
+<p>  citrine_thermal_conductivity: Thermal conductivity of 872 compounds measured experimentally and retrieved from Citrine database from various references. The reported values are measured at various temperatures of which 295 are at room temperature.</p>
+<p>  dielectric_constant: 1,056 structures with dielectric properties, calculated with DFPT-PBE.</p>
+<p>  double_perovskites_gap: Band gap of 1306 double perovskites (a_1-b_1-a_2-b_2-O6) calculated using ﻿Gritsenko, van Leeuwen, van Lenthe and Baerends potential (gllbsc) in GPAW.</p>
+<p>  double_perovskites_gap_lumo: Supplementary lumo data of 55 atoms for the double_perovskites_gap dataset.</p>
+<p>  elastic_tensor_2015: 1,181 structures with elastic properties calculated with DFT-PBE.</p>
+<p>  expt_formation_enthalpy: Experimental formation enthalpies for inorganic compounds, collected from years of calorimetric experiments. There are 1,276 entries in this dataset, mostly binary compounds. Matching mpids or oqmdids as well as the DFT-computed formation energies are also added (if any).</p>
+<p>  expt_gap: Experimental band gap of 6354 inorganic semiconductors.</p>
+<p>  flla: 3938 structures and computed formation energies from “Crystal Structure Representations for Machine Learning Models of Formation Energies.”</p>
+<p>  glass_binary: Metallic glass formation data for binary alloys, collected from various experimental techniques such as melt-spinning or mechanical alloying. This dataset covers all compositions with an interval of 5 at. % in 59 binary systems, containing a total of 5959 alloys in the dataset. The target property of this dataset is the glass forming ability (GFA), i.e. whether the composition can form monolithic glass or not, which is either 1 for glass forming or 0 for non-full glass forming.</p>
+<p>  glass_binary_v2: Identical to glass_binary dataset, but with duplicate entries merged. If there was a disagreement in gfa when merging the class was defaulted to 1.</p>
+<p>  glass_ternary_hipt: Metallic glass formation dataset for ternary alloys, collected from the high-throughput sputtering experiments measuring whether it is possible to form a glass using sputtering. The hipt experimental data are of the Co-Fe-Zr, Co-Ti-Zr, Co-V-Zr and Fe-Ti-Nb ternary systems.</p>
+<p>  glass_ternary_landolt: Metallic glass formation dataset for ternary alloys, collected from the “Nonequilibrium Phase Diagrams of Ternary Amorphous Alloys,’ a volume of the Landolt– Börnstein collection. This dataset contains experimental measurements of whether it is possible to form a glass using a variety of processing techniques at thousands of compositions from hundreds of ternary systems. The processing techniques are designated in the “processing” column. There are originally 7191 experiments in this dataset, will be reduced to 6203 after deduplicated, and will be further reduced to 6118 if combining multiple data for one composition. There are originally 6780 melt-spinning experiments in this dataset, will be reduced to 5800 if deduplicated, and will be further reduced to 5736 if combining multiple experimental data for one composition.</p>
+<p>  heusler_magnetic: 1153 Heusler alloys with DFT-calculated magnetic and electronic properties. The 1153 alloys include 576 full, 449 half and 128 inverse Heusler alloys. The data are extracted and cleaned (including de-duplicating) from Citrine.</p>
+<p>  jarvis_dft_2d: Various properties of 636 2D materials computed with the OptB88vdW and TBmBJ functionals taken from the JARVIS DFT database.</p>
+<p>  jarvis_dft_3d: Various properties of 25,923 bulk materials computed with the OptB88vdW and TBmBJ functionals taken from the JARVIS DFT database.</p>
+<p>  jarvis_ml_dft_training: Various properties of 24,759 bulk and 2D materials computed with the OptB88vdW and TBmBJ functionals taken from the JARVIS DFT database.</p>
+<p>  m2ax: Elastic properties of 223 stable M2AX compounds from “A comprehensive survey of M2AX phase elastic properties” by Cover et al. Calculations are PAW PW91.</p>
+<p>  matbench_dielectric: Matbench v0.1 test dataset for predicting refractive index from structure. Adapted from Materials Project database. Removed entries having a formation energy (or energy above the convex hull) more than 150meV and those having refractive indices less than 1 and those containing noble gases. Retrieved April 2, 2019. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.</p>
+<p>  matbench_expt_gap: Matbench v0.1 test dataset for predicting experimental band gap from composition alone. Retrieved from Zhuo et al. supplementary information. Deduplicated according to composition, removing compositions with reported band gaps spanning more than a 0.1eV range; remaining compositions were assigned values based on the closest experimental value to the mean experimental value for that composition among all reports. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.</p>
+<p>  matbench_expt_is_metal: Matbench v0.1 test dataset for classifying metallicity from composition alone. Retrieved from Zhuo et al. supplementary information. Deduplicated according to composition, ensuring no conflicting reports were entered for any compositions (i.e., no reported compositions were both metal and nonmetal). For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.</p>
+<p>  matbench_glass: Matbench v0.1 test dataset for predicting full bulk metallic glass formation ability from chemical formula. Retrieved from “Nonequilibrium Phase Diagrams of Ternary Amorphous Alloys,’ a volume of the Landolt– Börnstein collection. Deduplicated according to composition, ensuring no compositions were reported as both GFA and not GFA (i.e., all reports agreed on the classification designation). For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.</p>
+<p>  matbench_jdft2d: Matbench v0.1 test dataset for predicting exfoliation energies from crystal structure (computed with the OptB88vdW and TBmBJ functionals). Adapted from the JARVIS DFT database. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.</p>
+<p>  matbench_log_gvrh: Matbench v0.1 test dataset for predicting DFT log10 VRH-average shear modulus from structure. Adapted from Materials Project database. Removed entries having a formation energy (or energy above the convex hull) more than 150meV and those having negative G_Voigt, G_Reuss, G_VRH, K_Voigt, K_Reuss, or K_VRH and those failing G_Reuss &lt;= G_VRH &lt;= G_Voigt or K_Reuss &lt;= K_VRH &lt;= K_Voigt and those containing noble gases. Retrieved April 2, 2019. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.</p>
+<p>  matbench_log_kvrh: Matbench v0.1 test dataset for predicting DFT log10 VRH-average bulk modulus from structure. Adapted from Materials Project database. Removed entries having a formation energy (or energy above the convex hull) more than 150meV and those having negative G_Voigt, G_Reuss, G_VRH, K_Voigt, K_Reuss, or K_VRH and those failing G_Reuss &lt;= G_VRH &lt;= G_Voigt or K_Reuss &lt;= K_VRH &lt;= K_Voigt and those containing noble gases. Retrieved April 2, 2019. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.</p>
+<p>  matbench_mp_e_form: Matbench v0.1 test dataset for predicting DFT formation energy from structure. Adapted from Materials Project database. Removed entries having formation energy more than 3.0eV and those containing noble gases. Retrieved April 2, 2019. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.</p>
+<p>  matbench_mp_gap: Matbench v0.1 test dataset for predicting DFT PBE band gap from structure. Adapted from Materials Project database. Removed entries having a formation energy (or energy above the convex hull) more than 150meV and those containing noble gases. Retrieved April 2, 2019. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.</p>
+<p>  matbench_mp_is_metal: Matbench v0.1 test dataset for predicting DFT metallicity from structure. Adapted from Materials Project database. Removed entries having a formation energy (or energy above the convex hull) more than 150meV and those containing noble gases. Retrieved April 2, 2019. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.</p>
+<p>  matbench_perovskites: Matbench v0.1 test dataset for predicting formation energy from crystal structure. Adapted from an original dataset generated by Castelli et al. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.</p>
+<p>  matbench_phonons: Matbench v0.1 test dataset for predicting vibration properties from crystal structure. Original data retrieved from Petretto et al. Original calculations done via ABINIT in the harmonic approximation based on density functional perturbation theory. Removed entries having a formation energy (or energy above the convex hull) more than 150meV. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.</p>
+<p>  matbench_steels: Matbench v0.1 test dataset for predicting steel yield strengths from chemical composition alone. Retrieved from Citrine informatics. Deduplicated. For benchmarking w/ nested cross validation, the order of the dataset must be identical to the retrieved data; refer to the Automatminer/Matbench publication for more details.</p>
+<p>  mp_all_20181018: A complete copy of the Materials Project database as of 10/18/2018. mp_all files contain structure data for each material while mp_nostruct does not.</p>
+<p>  mp_nostruct_20181018: A complete copy of the Materials Project database as of 10/18/2018. mp_all files contain structure data for each material while mp_nostruct does not.</p>
+<p>  phonon_dielectric_mp: Phonon (lattice/atoms vibrations) and dielectric properties of 1296 compounds computed via ABINIT software package in the harmonic approximation based on density functional perturbation theory.</p>
+<p>  piezoelectric_tensor: 941 structures with piezoelectric properties, calculated with DFT-PBE.</p>
+<p>  steel_strength: 312 steels with experimental yield strength and ultimate tensile strength, extracted and cleaned (including de-duplicating) from Citrine.</p>
+<p>  wolverton_oxides: 4,914 perovskite oxides containing composition data, lattice constants, and formation + vacancy formation energies. All perovskites are of the form ABO3. Adapted from a dataset presented by Emery and Wolverton.</p>
+<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span><span class="token string">'boltztrap_mp'</span>,
+ <span class="token string">'brgoch_superhard_training'</span>,
+ <span class="token string">'castelli_perovskites'</span>,
+ <span class="token string">'citrine_thermal_conductivity'</span>,
+ <span class="token string">'dielectric_constant'</span>,
+ <span class="token string">'double_perovskites_gap'</span>,
+ <span class="token string">'double_perovskites_gap_lumo'</span>,
+ <span class="token string">'elastic_tensor_2015'</span>,
+ <span class="token string">'expt_formation_enthalpy'</span>,
+ <span class="token string">'expt_gap'</span>,
+ <span class="token string">'flla'</span>,
+ <span class="token string">'glass_binary'</span>,
+ <span class="token string">'glass_binary_v2'</span>,
+ <span class="token string">'glass_ternary_hipt'</span>,
+ <span class="token string">'glass_ternary_landolt'</span>,
+ <span class="token string">'heusler_magnetic'</span>,
+ <span class="token string">'jarvis_dft_2d'</span>,
+ <span class="token string">'jarvis_dft_3d'</span>,
+ <span class="token string">'jarvis_ml_dft_training'</span>,
+ <span class="token string">'m2ax'</span>,
+ <span class="token string">'matbench_dielectric'</span>,
+ <span class="token string">'matbench_expt_gap'</span>,
+ <span class="token string">'matbench_expt_is_metal'</span>,
+ <span class="token string">'matbench_glass'</span>,
+ <span class="token string">'matbench_jdft2d'</span>,
+ <span class="token string">'matbench_log_gvrh'</span>,
+ <span class="token string">'matbench_log_kvrh'</span>,
+ <span class="token string">'matbench_mp_e_form'</span>,
+ <span class="token string">'matbench_mp_gap'</span>,
+ <span class="token string">'matbench_mp_is_metal'</span>,
+ <span class="token string">'matbench_perovskites'</span>,
+ <span class="token string">'matbench_phonons'</span>,
+ <span class="token string">'matbench_steels'</span>,
+ <span class="token string">'mp_all_20181018'</span>,
+ <span class="token string">'mp_nostruct_20181018'</span>,
+ <span class="token string">'phonon_dielectric_mp'</span>,
+ <span class="token string">'piezoelectric_tensor'</span>,
+ <span class="token string">'steel_strength'</span>,
+ <span class="token string">'wolverton_oxides'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> matminer<span class="token punctuation">.</span>datasets <span class="token keyword">import</span> load_dataset
+df <span class="token operator">=</span> load_dataset<span class="token punctuation">(</span><span class="token string">"dielectric_constant"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<p>  Fetching dielectric_constant.json.gz from <a target="_blank" rel="noopener" href="https://ndownloader.figshare.com/files/13213475">https://ndownloader.figshare.com/files/13213475</a> to C:\ProgramData\Anaconda3\lib\site-packages\matminer\datasets\dielectric_constant.json.gz</p>
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>material_id</th>
+      <th>formula</th>
+      <th>nsites</th>
+      <th>space_group</th>
+      <th>volume</th>
+      <th>structure</th>
+      <th>band_gap</th>
+      <th>e_electronic</th>
+      <th>e_total</th>
+      <th>n</th>
+      <th>poly_electronic</th>
+      <th>poly_total</th>
+      <th>pot_ferroelectric</th>
+      <th>cif</th>
+      <th>meta</th>
+      <th>poscar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>mp-441</td>
+      <td>Rb2Te</td>
+      <td>3</td>
+      <td>225</td>
+      <td>159.501208</td>
+      <td>[[1.75725875 1.2425695  3.04366125] Rb, [5.271...</td>
+      <td>1.88</td>
+      <td>[[3.44115795, -3.097e-05, -6.276e-05], [-2.837...</td>
+      <td>[[6.23414745, -0.00035252, -9.796e-05], [-0.00...</td>
+      <td>1.86</td>
+      <td>3.44</td>
+      <td>6.23</td>
+      <td>False</td>
+      <td>#\#CIF1.1\n###################################...</td>
+      <td>{u'incar': u'NELM = 100\nIBRION = 8\nLWAVE = F...</td>
+      <td>Rb2 Te1\n1.0\n5.271776 0.000000 3.043661\n1.75...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>mp-22881</td>
+      <td>CdCl2</td>
+      <td>3</td>
+      <td>166</td>
+      <td>84.298097</td>
+      <td>[[0. 0. 0.] Cd, [ 4.27210959  2.64061969 13.13...</td>
+      <td>3.52</td>
+      <td>[[3.34688382, -0.04498543, -0.22379197], [-0.0...</td>
+      <td>[[7.97018673, -0.29423886, -1.463590159999999]...</td>
+      <td>1.78</td>
+      <td>3.16</td>
+      <td>6.73</td>
+      <td>False</td>
+      <td>#\#CIF1.1\n###################################...</td>
+      <td>{u'incar': u'NELM = 100\nIBRION = 8\nLWAVE = F...</td>
+      <td>Cd1 Cl2\n1.0\n3.850977 0.072671 5.494462\n1.78...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>mp-28013</td>
+      <td>MnI2</td>
+      <td>3</td>
+      <td>164</td>
+      <td>108.335875</td>
+      <td>[[0. 0. 0.] Mn, [-2.07904300e-06  2.40067320e+...</td>
+      <td>1.17</td>
+      <td>[[5.5430849, -5.28e-06, -2.5030000000000003e-0...</td>
+      <td>[[13.80606079, 0.0006911900000000001, 9.655e-0...</td>
+      <td>2.23</td>
+      <td>4.97</td>
+      <td>10.64</td>
+      <td>False</td>
+      <td>#\#CIF1.1\n###################################...</td>
+      <td>{u'incar': u'NELM = 100\nIBRION = 8\nLWAVE = F...</td>
+      <td>Mn1 I2\n1.0\n4.158086 0.000000 0.000000\n-2.07...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>mp-567290</td>
+      <td>LaN</td>
+      <td>4</td>
+      <td>186</td>
+      <td>88.162562</td>
+      <td>[[-1.73309900e-06  2.38611186e+00  5.95256328e...</td>
+      <td>1.12</td>
+      <td>[[7.09316738, 7.99e-06, -0.0003864700000000000...</td>
+      <td>[[16.79535386, 8.199999999999997e-07, -0.00948...</td>
+      <td>2.65</td>
+      <td>7.04</td>
+      <td>17.99</td>
+      <td>False</td>
+      <td>#\#CIF1.1\n###################################...</td>
+      <td>{u'incar': u'NELM = 100\nIBRION = 8\nLWAVE = F...</td>
+      <td>La2 N2\n1.0\n4.132865 0.000000 0.000000\n-2.06...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>mp-560902</td>
+      <td>MnF2</td>
+      <td>6</td>
+      <td>136</td>
+      <td>82.826401</td>
+      <td>[[1.677294 2.484476 2.484476] Mn, [0. 0. 0.] M...</td>
+      <td>2.87</td>
+      <td>[[2.4239622, 7.452000000000001e-05, 6.06100000...</td>
+      <td>[[6.44055613, 0.0020446600000000002, 0.0013203...</td>
+      <td>1.53</td>
+      <td>2.35</td>
+      <td>7.12</td>
+      <td>False</td>
+      <td>#\#CIF1.1\n###################################...</td>
+      <td>{u'incar': u'NELM = 100\nIBRION = 8\nLDAUTYPE ...</td>
+      <td>Mn2 F4\n1.0\n3.354588 0.000000 0.000000\n0.000...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df<span class="token punctuation">.</span>columns<span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>输出：</strong></p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">Index([&#39;material_id&#39;, &#39;formula&#39;, &#39;nsites&#39;, &#39;space_group&#39;, &#39;volume&#39;,
+          &#39;structure&#39;, &#39;band_gap&#39;, &#39;e_electronic&#39;, &#39;e_total&#39;, &#39;n&#39;,
+          &#39;poly_electronic&#39;, &#39;poly_total&#39;, &#39;pot_ferroelectric&#39;, &#39;cif&#39;, &#39;meta&#39;,
+          &#39;poscar&#39;],
+        dtype&#x3D;&#39;object&#39;)<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df<span class="token punctuation">.</span>describe<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>nsites</th>
+      <th>space_group</th>
+      <th>volume</th>
+      <th>band_gap</th>
+      <th>n</th>
+      <th>poly_electronic</th>
+      <th>poly_total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>count</th>
+      <td>1056.000000</td>
+      <td>1056.000000</td>
+      <td>1056.000000</td>
+      <td>1056.000000</td>
+      <td>1056.000000</td>
+      <td>1056.000000</td>
+      <td>1056.000000</td>
+    </tr>
+    <tr>
+      <th>mean</th>
+      <td>7.530303</td>
+      <td>142.970644</td>
+      <td>166.420376</td>
+      <td>2.119432</td>
+      <td>2.434886</td>
+      <td>7.248049</td>
+      <td>14.777898</td>
+    </tr>
+    <tr>
+      <th>std</th>
+      <td>3.388443</td>
+      <td>67.264591</td>
+      <td>97.425084</td>
+      <td>1.604924</td>
+      <td>1.148849</td>
+      <td>13.054947</td>
+      <td>19.435303</td>
+    </tr>
+    <tr>
+      <th>min</th>
+      <td>2.000000</td>
+      <td>1.000000</td>
+      <td>13.980548</td>
+      <td>0.110000</td>
+      <td>1.280000</td>
+      <td>1.630000</td>
+      <td>2.080000</td>
+    </tr>
+    <tr>
+      <th>25%</th>
+      <td>5.000000</td>
+      <td>82.000000</td>
+      <td>96.262337</td>
+      <td>0.890000</td>
+      <td>1.770000</td>
+      <td>3.130000</td>
+      <td>7.557500</td>
+    </tr>
+    <tr>
+      <th>50%</th>
+      <td>8.000000</td>
+      <td>163.000000</td>
+      <td>145.944691</td>
+      <td>1.730000</td>
+      <td>2.190000</td>
+      <td>4.790000</td>
+      <td>10.540000</td>
+    </tr>
+    <tr>
+      <th>75%</th>
+      <td>9.000000</td>
+      <td>194.000000</td>
+      <td>212.106405</td>
+      <td>2.885000</td>
+      <td>2.730000</td>
+      <td>7.440000</td>
+      <td>15.482500</td>
+    </tr>
+    <tr>
+      <th>max</th>
+      <td>20.000000</td>
+      <td>229.000000</td>
+      <td>597.341134</td>
+      <td>8.320000</td>
+      <td>16.030000</td>
+      <td>256.840000</td>
+      <td>277.780000</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df <span class="token punctuation">[</span><span class="token string">"band_gap"</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>输出：</strong></p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">0       1.88
+1       3.52
+2       1.17
+3       1.12
+4       2.87
+        ... 
+1051    0.87
+1052    3.60
+1053    0.14
+1054    0.21
+1055    0.26
+Name: band_gap, Length: 1056, dtype: float64<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">df<span class="token punctuation">.</span>iloc<span class="token punctuation">[</span><span class="token number">100</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre>
+
+<p><strong>输出：</strong></p>
+<pre class="line-numbers language-text" data-language="text"><code class="language-text">material_id                                                    mp-7140
+formula                                                            SiC
+nsites                                                               4
+space_group                                                        186
+volume                                                         42.0055
+structure            [[-1.87933700e-06  1.78517223e+00  2.53458835e...
+band_gap                                                           2.3
+e_electronic         [[6.9589498, -3.29e-06, 0.0014472600000000001]...
+e_total              [[10.193825310000001, -3.7090000000000006e-05,...
+n                                                                 2.66
+poly_electronic                                                   7.08
+poly_total                                                       10.58
+pot_ferroelectric                                                False
+cif                  #\#CIF1.1\n###################################...
+meta                 &#123;u&#39;incar&#39;: u&#39;NELM &#x3D; 100\nIBRION &#x3D; 8\nLWAVE &#x3D; F...
+poscar               Si2 C2\n1.0\n3.092007 0.000000 0.000000\n-1.54...
+Name: 100, dtype: object<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">mask <span class="token operator">=</span> df<span class="token punctuation">[</span><span class="token string">"volume"</span><span class="token punctuation">]</span> <span class="token operator">></span> <span class="token number">580</span>
+df <span class="token punctuation">[</span>mask<span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>material_id</th>
+      <th>formula</th>
+      <th>nsites</th>
+      <th>space_group</th>
+      <th>volume</th>
+      <th>structure</th>
+      <th>band_gap</th>
+      <th>e_electronic</th>
+      <th>e_total</th>
+      <th>n</th>
+      <th>poly_electronic</th>
+      <th>poly_total</th>
+      <th>pot_ferroelectric</th>
+      <th>cif</th>
+      <th>meta</th>
+      <th>poscar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>206</th>
+      <td>mp-23280</td>
+      <td>AsCl3</td>
+      <td>16</td>
+      <td>19</td>
+      <td>582.085309</td>
+      <td>[[0.13113333 7.14863883 9.63476955] As, [2.457...</td>
+      <td>3.99</td>
+      <td>[[2.2839161900000002, 0.00014519, -2.238000000...</td>
+      <td>[[2.49739759, 0.00069379, 0.00075864], [0.0004...</td>
+      <td>1.57</td>
+      <td>2.47</td>
+      <td>3.30</td>
+      <td>False</td>
+      <td>#\#CIF1.1\n###################################...</td>
+      <td>{u'incar': u'NELM = 100\nIBRION = 8\nLWAVE = F...</td>
+      <td>As4 Cl12\n1.0\n4.652758 0.000000 0.000000\n0.0...</td>
+    </tr>
+    <tr>
+      <th>216</th>
+      <td>mp-9064</td>
+      <td>RbTe</td>
+      <td>12</td>
+      <td>189</td>
+      <td>590.136085</td>
+      <td>[[6.61780282 0.         0.        ] Rb, [1.750...</td>
+      <td>0.43</td>
+      <td>[[3.25648277, 5.9650000000000007e-05, 1.57e-06...</td>
+      <td>[[5.34517928, 0.00022474000000000002, -0.00018...</td>
+      <td>2.05</td>
+      <td>4.20</td>
+      <td>6.77</td>
+      <td>False</td>
+      <td>#\#CIF1.1\n###################################...</td>
+      <td>{u'incar': u'NELM = 100\nIBRION = 8\nLWAVE = F...</td>
+      <td>Rb6 Te6\n1.0\n10.118717 0.000000 0.000000\n-5....</td>
+    </tr>
+    <tr>
+      <th>219</th>
+      <td>mp-23230</td>
+      <td>PCl3</td>
+      <td>16</td>
+      <td>62</td>
+      <td>590.637274</td>
+      <td>[[6.02561815 8.74038483 7.55586375] P, [2.7640...</td>
+      <td>4.03</td>
+      <td>[[2.39067769, 0.00017593, 8.931000000000001e-0...</td>
+      <td>[[2.80467218, 0.00034093000000000003, 0.000692...</td>
+      <td>1.52</td>
+      <td>2.31</td>
+      <td>2.76</td>
+      <td>False</td>
+      <td>#\#CIF1.1\n###################################...</td>
+      <td>{u'incar': u'NELM = 100\nIBRION = 8\nLWAVE = F...</td>
+      <td>P4 Cl12\n1.0\n6.523152 0.000000 0.000000\n0.00...</td>
+    </tr>
+    <tr>
+      <th>251</th>
+      <td>mp-2160</td>
+      <td>Sb2Se3</td>
+      <td>20</td>
+      <td>62</td>
+      <td>597.341134</td>
+      <td>[[3.02245275 0.42059268 1.7670481 ] Sb, [ 1.00...</td>
+      <td>0.76</td>
+      <td>[[19.1521058, 5.5e-06, 0.00025268], [-1.078000...</td>
+      <td>[[81.93819038000001, 0.0006755800000000001, 0....</td>
+      <td>3.97</td>
+      <td>15.76</td>
+      <td>63.53</td>
+      <td>True</td>
+      <td>#\#CIF1.1\n###################################...</td>
+      <td>{u'incar': u'NELM = 100\nIBRION = 8\nLWAVE = F...</td>
+      <td>Sb8 Se12\n1.0\n4.029937 0.000000 0.000000\n0.0...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+
+<pre class="line-numbers language-python" data-language="python"><code class="language-python">cleaned_df <span class="token operator">=</span> df<span class="token punctuation">.</span>drop<span class="token punctuation">(</span><span class="token punctuation">[</span><span class="token string">"nsites"</span><span class="token punctuation">,</span><span class="token string">"space_group"</span><span class="token punctuation">]</span><span class="token punctuation">,</span> axis <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">)</span>
+cleaned_df<span class="token punctuation">.</span>head<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+<pre><code>.dataframe tbody tr th &#123;
+    vertical-align: top;
+&#125;
+
+.dataframe thead th &#123;
+    text-align: right;
+&#125;
+</code></pre>
+<p></style></p>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>material_id</th>
+      <th>formula</th>
+      <th>volume</th>
+      <th>structure</th>
+      <th>band_gap</th>
+      <th>e_electronic</th>
+      <th>e_total</th>
+      <th>n</th>
+      <th>poly_electronic</th>
+      <th>poly_total</th>
+      <th>pot_ferroelectric</th>
+      <th>cif</th>
+      <th>meta</th>
+      <th>poscar</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>mp-441</td>
+      <td>Rb2Te</td>
+      <td>159.501208</td>
+      <td>[[1.75725875 1.2425695  3.04366125] Rb, [5.271...</td>
+      <td>1.88</td>
+      <td>[[3.44115795, -3.097e-05, -6.276e-05], [-2.837...</td>
+      <td>[[6.23414745, -0.00035252, -9.796e-05], [-0.00...</td>
+      <td>1.86</td>
+      <td>3.44</td>
+      <td>6.23</td>
+      <td>False</td>
+      <td>#\#CIF1.1\n###################################...</td>
+      <td>{u'incar': u'NELM = 100\nIBRION = 8\nLWAVE = F...</td>
+      <td>Rb2 Te1\n1.0\n5.271776 0.000000 3.043661\n1.75...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>mp-22881</td>
+      <td>CdCl2</td>
+      <td>84.298097</td>
+      <td>[[0. 0. 0.] Cd, [ 4.27210959  2.64061969 13.13...</td>
+      <td>3.52</td>
+      <td>[[3.34688382, -0.04498543, -0.22379197], [-0.0...</td>
+      <td>[[7.97018673, -0.29423886, -1.463590159999999]...</td>
+      <td>1.78</td>
+      <td>3.16</td>
+      <td>6.73</td>
+      <td>False</td>
+      <td>#\#CIF1.1\n###################################...</td>
+      <td>{u'incar': u'NELM = 100\nIBRION = 8\nLWAVE = F...</td>
+      <td>Cd1 Cl2\n1.0\n3.850977 0.072671 5.494462\n1.78...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>mp-28013</td>
+      <td>MnI2</td>
+      <td>108.335875</td>
+      <td>[[0. 0. 0.] Mn, [-2.07904300e-06  2.40067320e+...</td>
+      <td>1.17</td>
+      <td>[[5.5430849, -5.28e-06, -2.5030000000000003e-0...</td>
+      <td>[[13.80606079, 0.0006911900000000001, 9.655e-0...</td>
+      <td>2.23</td>
+      <td>4.97</td>
+      <td>10.64</td>
+      <td>False</td>
+      <td>#\#CIF1.1\n###################################...</td>
+      <td>{u'incar': u'NELM = 100\nIBRION = 8\nLWAVE = F...</td>
+      <td>Mn1 I2\n1.0\n4.158086 0.000000 0.000000\n-2.07...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>mp-567290</td>
+      <td>LaN</td>
+      <td>88.162562</td>
+      <td>[[-1.73309900e-06  2.38611186e+00  5.95256328e...</td>
+      <td>1.12</td>
+      <td>[[7.09316738, 7.99e-06, -0.0003864700000000000...</td>
+      <td>[[16.79535386, 8.199999999999997e-07, -0.00948...</td>
+      <td>2.65</td>
+      <td>7.04</td>
+      <td>17.99</td>
+      <td>False</td>
+      <td>#\#CIF1.1\n###################################...</td>
+      <td>{u'incar': u'NELM = 100\nIBRION = 8\nLWAVE = F...</td>
+      <td>La2 N2\n1.0\n4.132865 0.000000 0.000000\n-2.06...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>mp-560902</td>
+      <td>MnF2</td>
+      <td>82.826401</td>
+      <td>[[1.677294 2.484476 2.484476] Mn, [0. 0. 0.] M...</td>
+      <td>2.87</td>
+      <td>[[2.4239622, 7.452000000000001e-05, 6.06100000...</td>
+      <td>[[6.44055613, 0.0020446600000000002, 0.0013203...</td>
+      <td>1.53</td>
+      <td>2.35</td>
+      <td>7.12</td>
+      <td>False</td>
+      <td>#\#CIF1.1\n###################################...</td>
+      <td>{u'incar': u'NELM = 100\nIBRION = 8\nLDAUTYPE ...</td>
+      <td>Mn2 F4\n1.0\n3.354588 0.000000 0.000000\n0.000...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+                
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="/about" rel="external nofollow noreferrer">Zhang Quan</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://zhangquan2018.github.io/2021/03/16/introduction%20to%20matminer/">https://zhangquan2018.github.io/2021/03/16/introduction%20to%20matminer/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="/about" target="_blank">Zhang Quan</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Machine-Learning/">
+                                    <span class="chip bg-color">Machine Learning</span>
+                                </a>
+                            
+                                <a href="/tags/Matminer/">
+                                    <span class="chip bg-color">Matminer</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+<div id="article-share">
+
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.jpg" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2021/03/16/introduction%20to%20matminer/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/6.jpg" class="responsive-img" alt="Matminer入门">
+                        
+                        <span class="card-title">Matminer入门</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            使用Matminer进行材料科学机器学习初步
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/Machine-Learning/" class="post-category">
+                                    Machine Learning
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Machine-Learning/">
+                        <span class="chip bg-color">Machine Learning</span>
+                    </a>
+                    
+                    <a href="/tags/Matminer/">
+                        <span class="chip bg-color">Matminer</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2021/03/14/INCAR%E8%AE%BE%E7%BD%AE/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/9.jpg" class="responsive-img" alt="VASP INCAR设置">
+                        
+                        <span class="card-title">VASP INCAR设置</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            关于VASP输入文件INCAR的介绍
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2021-03-14
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/DFT/" class="post-category">
+                                    DFT
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/VASP/">
+                        <span class="chip bg-color">VASP</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget card" style="background-color: white;">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+
+    <footer class="page-footer bg-color">
+    
+        <link rel="stylesheet" href="/libs/aplayer/APlayer.min.css">
+<style>
+    .aplayer .aplayer-lrc p {
+        
+        display: none;
+        
+        font-size: 12px;
+        font-weight: 700;
+        line-height: 16px !important;
+    }
+
+    .aplayer .aplayer-lrc p.aplayer-lrc-current {
+        
+        display: none;
+        
+        font-size: 15px;
+        color: #42b983;
+    }
+
+    
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body {
+        left: -66px !important;
+    }
+
+    .aplayer.aplayer-fixed.aplayer-narrow .aplayer-body:hover {
+        left: 0px !important;
+    }
+
+    
+</style>
+<div class="">
+    
+    <div class="row">
+        <meting-js class="col l8 offset-l2 m10 offset-m1 s12"
+                   server="netease"
+                   type="playlist"
+                   id="503838841"
+                   fixed='true'
+                   autoplay='false'
+                   theme='#42b983'
+                   loop='all'
+                   order='random'
+                   preload='auto'
+                   volume='0.7'
+                   list-folded='true'
+        >
+        </meting-js>
+    </div>
+</div>
+
+<script src="/libs/aplayer/APlayer.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+
+    
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            
+                <span id="year">2021</span>
+            
+            <span id="year">2021</span>
+            <a href="/about" target="_blank">Zhang Quan</a>
+            |&nbsp;Powered by&nbsp;<a href="https://hexo.io/" target="_blank">Hexo</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">7.4k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2021";
+                    var startMonth = "3";
+                    var startDate = "14";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+
+
+    <a href="mailto:951135852@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=951135852" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 951135852" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+$(function () {
+    var searchFunc = function (path, search_id, content_id) {
+        'use strict';
+        $.ajax({
+            url: path,
+            dataType: "xml",
+            success: function (xmlResponse) {
+                // get the contents from search data
+                var datas = $("entry", xmlResponse).map(function () {
+                    return {
+                        title: $("title", this).text(),
+                        content: $("content", this).text(),
+                        url: $("url", this).text()
+                    };
+                }).get();
+                var $input = document.getElementById(search_id);
+                var $resultContent = document.getElementById(content_id);
+                $input.addEventListener('input', function () {
+                    var str = '<ul class=\"search-result-list\">';
+                    var keywords = this.value.trim().toLowerCase().split(/[\s\-]+/);
+                    $resultContent.innerHTML = "";
+                    if (this.value.trim().length <= 0) {
+                        return;
+                    }
+                    // perform local searching
+                    datas.forEach(function (data) {
+                        var isMatch = true;
+                        var data_title = data.title.trim().toLowerCase();
+                        var data_content = data.content.trim().replace(/<[^>]+>/g, "").toLowerCase();
+                        var data_url = data.url;
+                        data_url = data_url.indexOf('/') === 0 ? data.url : '/' + data_url;
+                        var index_title = -1;
+                        var index_content = -1;
+                        var first_occur = -1;
+                        // only match artiles with not empty titles and contents
+                        if (data_title !== '' && data_content !== '') {
+                            keywords.forEach(function (keyword, i) {
+                                index_title = data_title.indexOf(keyword);
+                                index_content = data_content.indexOf(keyword);
+                                if (index_title < 0 && index_content < 0) {
+                                    isMatch = false;
+                                } else {
+                                    if (index_content < 0) {
+                                        index_content = 0;
+                                    }
+                                    if (i === 0) {
+                                        first_occur = index_content;
+                                    }
+                                }
+                            });
+                        }
+                        // show search results
+                        if (isMatch) {
+                            str += "<li><a href='" + data_url + "' class='search-result-title'>" + data_title + "</a>";
+                            var content = data.content.trim().replace(/<[^>]+>/g, "");
+                            if (first_occur >= 0) {
+                                // cut out 100 characters
+                                var start = first_occur - 20;
+                                var end = first_occur + 80;
+                                if (start < 0) {
+                                    start = 0;
+                                }
+                                if (start === 0) {
+                                    end = 100;
+                                }
+                                if (end > content.length) {
+                                    end = content.length;
+                                }
+                                var match_content = content.substr(start, end);
+                                // highlight all keywords
+                                keywords.forEach(function (keyword) {
+                                    var regS = new RegExp(keyword, "gi");
+                                    match_content = match_content.replace(regS, "<em class=\"search-keyword\">" + keyword + "</em>");
+                                });
+
+                                str += "<p class=\"search-result\">" + match_content + "...</p>"
+                            }
+                            str += "</li>";
+                        }
+                    });
+                    str += "</ul>";
+                    $resultContent.innerHTML = str;
+                });
+            }
+        });
+    };
+
+    searchFunc('/search.xml', 'searchInput', 'searchResult');
+});
+</script>
+
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    <!--腾讯兔小巢-->
+    
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
