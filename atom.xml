@@ -6,7 +6,7 @@
   <link href="https://zhangquan2018.github.io/atom.xml" rel="self"/>
   
   <link href="https://zhangquan2018.github.io/"/>
-  <updated>2021-03-16T15:39:49.996Z</updated>
+  <updated>2021-03-29T02:36:53.342Z</updated>
   <id>https://zhangquan2018.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>机器学习介绍</title>
+    <link href="https://zhangquan2018.github.io/2021/03/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BB%8B%E7%BB%8D/"/>
+    <id>https://zhangquan2018.github.io/2021/03/24/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E4%BB%8B%E7%BB%8D/</id>
+    <published>2021-03-24T03:16:44.000Z</published>
+    <updated>2021-03-29T02:36:53.342Z</updated>
+    
+    <content type="html"><![CDATA[<img src="https://raw.githubusercontent.com/Zhangquan2018/cloudimg/master/img20210324163512.png"/><h2 id="数据处理"><a href="#数据处理" class="headerlink" title="数据处理"></a>数据处理</h2><p>数据处理包含两个部分：<strong>数据选择</strong>和<strong>特征工程</strong>。</p><h3 id="数据选择"><a href="#数据选择" class="headerlink" title="数据选择"></a>数据选择</h3><p>近来，材料基因组计划（MGI）和世界各地其他类似的组织活动一直在促进材料科学中大数据的可用性和可访问性。许多不同类型的材料性质数据（如物理、化学、机械、电子、热力学和结构性质）都可以由第一原则计算（如弹性模量）或实验测量（如导热系数）生成。如此大的数据为数据驱动技术或ML方法的应用提供了巨大的机会，从而加速新的先进材料的发现和设计。</p><p>目前，可以开放访问的材料结构数据库展示如下图：</p><div align="center"><img src="https://i.loli.net/2021/03/24/WMaZoxQF54ciDbm.png" width=80% /></div>    我们需要从这些数据库中获取我们所需要的原始数据（可以用[pymatgen](https://pymatgen.org/index.html)，材料计算一大神器；编程好的可以手写爬虫程序），然后进行数据清洗，得到我们想要的高质量数据。    此外，我们可以借助[Matminer](https://hackingmaterials.lbl.gov/matminer/)工具获取一些已经处理好了的数据集，使用命令如下：<pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> matminer<span class="token punctuation">.</span>datasets <span class="token keyword">import</span> get_available_datasetsget_available_datasets<span class="token punctuation">(</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre>然后会显示出所有就已经处理好的数据集，如下表：<pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token punctuation">[</span><span class="token string">'boltztrap_mp'</span>, <span class="token string">'brgoch_superhard_training'</span>, <span class="token string">'castelli_perovskites'</span>, <span class="token string">'citrine_thermal_conductivity'</span>, <span class="token string">'dielectric_constant'</span>, <span class="token string">'double_perovskites_gap'</span>, <span class="token string">'double_perovskites_gap_lumo'</span>, <span class="token string">'elastic_tensor_2015'</span>, <span class="token string">'expt_formation_enthalpy'</span>, <span class="token string">'expt_gap'</span>, <span class="token string">'flla'</span>, <span class="token string">'glass_binary'</span>, <span class="token string">'glass_binary_v2'</span>, <span class="token string">'glass_ternary_hipt'</span>, <span class="token string">'glass_ternary_landolt'</span>, <span class="token string">'heusler_magnetic'</span>, <span class="token string">'jarvis_dft_2d'</span>, <span class="token string">'jarvis_dft_3d'</span>, <span class="token string">'jarvis_ml_dft_training'</span>, <span class="token string">'m2ax'</span>, <span class="token string">'matbench_dielectric'</span>, <span class="token string">'matbench_expt_gap'</span>, <span class="token string">'matbench_expt_is_metal'</span>, <span class="token string">'matbench_glass'</span>, <span class="token string">'matbench_jdft2d'</span>, <span class="token string">'matbench_log_gvrh'</span>, <span class="token string">'matbench_log_kvrh'</span>, <span class="token string">'matbench_mp_e_form'</span>, <span class="token string">'matbench_mp_gap'</span>, <span class="token string">'matbench_mp_is_metal'</span>, <span class="token string">'matbench_perovskites'</span>, <span class="token string">'matbench_phonons'</span>, <span class="token string">'matbench_steels'</span>, <span class="token string">'mp_all_20181018'</span>, <span class="token string">'mp_nostruct_20181018'</span>, <span class="token string">'phonon_dielectric_mp'</span>, <span class="token string">'piezoelectric_tensor'</span>, <span class="token string">'steel_strength'</span>, <span class="token string">'wolverton_oxides'</span><span class="token punctuation">]</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre><p>之后调用下面的命令就可以将想要的数据集下载下来。（Matminer库很强大，打算写个详细教程。。）</p><pre class="line-numbers language-python" data-language="python"><code class="language-python"><span class="token keyword">from</span> matminer<span class="token punctuation">.</span>datasets <span class="token keyword">import</span> load_datasetdf <span class="token operator">=</span> load_dataset<span class="token punctuation">(</span><span class="token string">"****"</span><span class="token punctuation">)</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span></span></code></pre><h3 id="特征工程"><a href="#特征工程" class="headerlink" title="特征工程"></a>特征工程</h3><div align="center"><img src="https://raw.githubusercontent.com/Zhangquan2018/cloudimg/master/img20210324151226.png" width=90%/></div><h2 id="模型选择"><a href="#模型选择" class="headerlink" title="模型选择"></a>模型选择</h2><p><code>TODO</code></p><div align="center"><img src="https://raw.githubusercontent.com/Zhangquan2018/cloudimg/master/img20210324165538.png" width=90%/></div><h2 id="模型训练与测试"><a href="#模型训练与测试" class="headerlink" title="模型训练与测试"></a>模型训练与测试</h2><p><code>TODO</code></p><h2 id="预测"><a href="#预测" class="headerlink" title="预测"></a>预测</h2><p><code>TODO</code></p><div align="center"><img src="https://raw.githubusercontent.com/Zhangquan2018/cloudimg/master/img20210324165504.png" width=50%/></div><h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><p>(1) Zhilong Song(宋志龙), X. C.; Zhilong Song(宋志龙), X. C. Machine learning in materials design: Algorithm and application. Chin. Phys. B 2020, 29 (11), 116103. <a href="https://doi.org/10.1088/1674-1056/abc0e3">https://doi.org/10.1088/1674-1056/abc0e3</a>.<br>(2) Zhou, T.; Song, Z.; Sundmacher, K. Big Data Creates New Opportunities for Materials Research: A Review on Methods and Applications of Machine Learning for Materials Design. Engineering 2019, 5 (6), 1017–1026. <a href="https://doi.org/10.1016/j.eng.2019.02.011">https://doi.org/10.1016/j.eng.2019.02.011</a>.</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;img src=&quot;https://raw.githubusercontent.com/Zhangquan2018/cloudimg/master/img20210324163512.png&quot;/&gt;
+
+&lt;h2 id=&quot;数据处理&quot;&gt;&lt;a href=&quot;#数据处理&quot; class=&quot;hea</summary>
+      
+    
+    
+    
+    <category term="Machine Learning" scheme="https://zhangquan2018.github.io/categories/Machine-Learning/"/>
+    
+    
+    <category term="Machine Learning" scheme="https://zhangquan2018.github.io/tags/Machine-Learning/"/>
+    
+  </entry>
   
   <entry>
     <title>Matminer入门</title>
