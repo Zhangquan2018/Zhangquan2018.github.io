@@ -502,33 +502,33 @@ df <span class="token operator">=</span> load_dataset<span class="token punctuat
 <p> <strong>如果输出是离散目标（如是否有毒、何种晶体），则搜索预测函数的过程称为分类</strong>。决策树和随机森林算法是两种最常用的分类算法。</p>
 <p>材料科学常用的机器学习模型：</p>
 <ul>
-<li><p>支持向量机（Support vector machine, SVM）<br>无需依赖整个数据ꎬ能够处理非线性特征的相互作用，可以提高泛化能力，解决高维问题，但若样本过多时，由于数据敏感度的缺失而导致效率不是很高。</p>
+<li><p><strong>支持向量机（Support vector machine, SVM）</strong><br>无需依赖整个数据,能够处理非线性特征的相互作用，可以提高泛化能力，解决高维问题，但若样本过多时，由于数据敏感度的缺失而导致效率不是很高。</p>
 </li>
-<li><p>线性回归（Linear regression, LR）<br>适用于简单的回归问题,用梯度下降法对最小二乘法形式的误差函数进行优化,计算简单、训练速度快ꎬ但不能拟合非线性数据。</p>
+<li><p><strong>线性回归（Linear regression, LR）</strong><br>适用于简单的回归问题,用梯度下降法对最小二乘法形式的误差函数进行优化,计算简单、训练速度快,但不能拟合非线性数据。</p>
 </li>
-<li><p>逻辑回归（Logistic regression, LR）<br>进行分类问题时ꎬ计算速度快，可结合正则化模型来解决问题。</p>
+<li><p><strong>逻辑回归（Logistic regression, LR）</strong><br>进行分类问题时ꎬ计算速度快，可结合正则化模型来解决问题。</p>
 </li>
-<li><p>K最近邻算法（K-Nearest neighbor, KNN）<br>既可做回归问题,也可做分类问题,可用于非线性的分类问题,但当样本不平衡时,可能会导致结果不准确。</p>
+<li><p><strong>K最近邻算法（K-Nearest neighbor, KNN）</strong><br>既可做回归问题,也可做分类问题,可用于非线性的分类问题,但当样本不平衡时,可能会导致结果不准确。</p>
 </li>
-<li><p>决策树（Decision tree, DT）<br>适合处理含有缺失属性的样本，短时间内能够对大数据源做出较好的结果，但容易发生过拟合，忽略数据间的相关性。</p>
+<li><p><strong>决策树（Decision tree, DT）</strong><br>适合处理含有缺失属性的样本，短时间内能够对大数据源做出较好的结果，但容易发生过拟合，忽略数据间的相关性。</p>
 </li>
-<li><p>随机森林（Random forests, RF）<br>基于Bagging 的集成学习方法，可以用来做分类、回归等问题。因为随机性的引入，使得有较好的抗噪声能力且不易过拟合，训练速度快，有极高的准确率，但训练时需较大的空间和时间。</p>
+<li><p><strong>随机森林（Random forests, RF）</strong><br>基于Bagging 的集成学习方法，可以用来做分类、回归等问题。因为随机性的引入，使得有较好的抗噪声能力且不易过拟合，训练速度快，有极高的准确率，但训练时需较大的空间和时间。</p>
 </li>
-<li><p>核岭回归（Kernel ridge regression, KRR）<br>经常用于材料性能的回归分析预测，如带隙和合成焓(能)预测。</p>
+<li><p><strong>核岭回归（Kernel ridge regression, KRR）</strong><br>经常用于材料性能的回归分析预测，如带隙和合成焓(能)预测。</p>
 </li>
-<li><p>压缩感知（Compressive sensing, CS）<br>基于压缩感知的特征选择方法，被用于建立一个定量预测二元化合物半导体晶体结构的物理模型。</p>
+<li><p><strong>压缩感知（Compressive sensing, CS）</strong><br>基于压缩感知的特征选择方法，被用于建立一个定量预测二元化合物半导体晶体结构的物理模型。</p>
 </li>
-<li><p>自动编码器（Auto-encoder, AE）<br>主要是通过逐层的无监督学习先将输入数据进行表征的压缩，然后通过网络进行有监督的学习。</p>
+<li><p><strong>自动编码器（Auto-encoder, AE）</strong><br>主要是通过逐层的无监督学习先将输入数据进行表征的压缩，然后通过网络进行有监督的学习。</p>
 </li>
-<li><p>深度神经网络（Deep neural network, DNN）<br>适合非线性函数拟合特征抽取。</p>
+<li><p><strong>深度神经网络（Deep neural network, DNN）</strong><br>适合非线性函数拟合特征抽取。</p>
 </li>
-<li><p>卷积神经网络（Convolutional neural network, CNN）<br>特别适合于图像模式识别、计算机视觉等领域，应用于描述基于Ｘ射线衍射的空间群预测。</p>
+<li><p><strong>卷积神经网络（Convolutional neural network, CNN）</strong><br>特别适合于图像模式识别、计算机视觉等领域，应用于描述基于Ｘ射线衍射的空间群预测。</p>
 </li>
-<li><p>循环或递归神经网络（Recusive or recurrent neural network, RNN）<br>深度学习主要框架之一，主要是将上一次迭代的输出作为当前迭代的输入，从而实现循环，可用于建立结构和材料性质之间的函数关系。</p>
+<li><p><strong>循环或递归神经网络（Recusive or recurrent neural network, RNN）</strong><br>深度学习主要框架之一，主要是将上一次迭代的输出作为当前迭代的输入，从而实现循环，可用于建立结构和材料性质之间的函数关系。</p>
 </li>
-<li><p>（经典）人工神经网络（Artificial neural network, ANN）<br>用于探索大量的晶体结构和可视化的结构——性能关系，应用于预测小分子力场的电子性质。</p>
+<li><p><strong>（经典）人工神经网络（Artificial neural network, ANN）</strong><br>用于探索大量的晶体结构和可视化的结构——性能关系，应用于预测小分子力场的电子性质。</p>
 </li>
-<li><p>图神经网络（Graph neural network, GNN）<br>类比于图的结构，晶体或者分子中的原子和化学键正好类似于图中的节点和边,非常适合于材料科学领域。</p>
+<li><p><strong>图神经网络（Graph neural network, GNN）</strong><br>类比于图的结构，晶体或者分子中的原子和化学键正好类似于图中的节点和边,非常适合于材料科学领域。</p>
 </li>
 </ul>
 <p>目前，这些模型可以使用Tensorflow、Pytorch、Scikit-learn等python开源框架实现。</p>
