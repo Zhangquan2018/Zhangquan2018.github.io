@@ -386,7 +386,7 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4k
+                    3.9k
                 </div>
                 
 
@@ -427,25 +427,25 @@
 <p>ka~15埃，for insulators</p>
 <p><strong>几何结构优化</strong>：EDIFF = 1E-5</p>
 <p><strong>过渡态和频率计算</strong>：EDIFF = 1E-6或1E-7</p>
-<h2 id="磁性计算"><a href="#磁性计算" class="headerlink" title="磁性计算"></a>磁性计算</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">SYSTEM &#x3D; N2P
-ENCUT &#x3D; 520
-ISTART &#x3D; 0; ICHARG &#x3D; 2
-ISMEAR &#x3D; 0
-SIGMA&#x3D;0.05
-NSW&#x3D;100
-#PRECSYM&#x3D;0.01
-IBRION &#x3D; 2
-ISIF &#x3D; 2
-VOSKOWN &#x3D; 1
-ISPIN &#x3D; 2
-MAGMOM &#x3D; 1.0 -1.0 1.0 -1.0 6*0 #设置初始磁矩
-LORBIT &#x3D; 11
-LCHARG &#x3D; .FALSE.
-LWAVE &#x3D; .FALSE.
-EDIFF &#x3D; 0.00001
-EDIFFG &#x3D; -0.001
-NPAR&#x3D;4
-PREC &#x3D; A<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="磁性计算"><a href="#磁性计算" class="headerlink" title="磁性计算"></a>磁性计算</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">SYSTEM <span class="token operator">=</span> N2P
+ENCUT <span class="token operator">=</span> <span class="token number">520</span>
+ISTART <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> ICHARG <span class="token operator">=</span> <span class="token number">2</span>
+ISMEAR <span class="token operator">=</span> <span class="token number">0</span>
+<span class="token assign-left variable">SIGMA</span><span class="token operator">=</span><span class="token number">0.05</span>
+<span class="token assign-left variable">NSW</span><span class="token operator">=</span><span class="token number">100</span>
+<span class="token comment">#PRECSYM=0.01</span>
+IBRION <span class="token operator">=</span> <span class="token number">2</span>
+ISIF <span class="token operator">=</span> <span class="token number">2</span>
+VOSKOWN <span class="token operator">=</span> <span class="token number">1</span>
+ISPIN <span class="token operator">=</span> <span class="token number">2</span>
+MAGMOM <span class="token operator">=</span> <span class="token number">1.0</span> -1.0 <span class="token number">1.0</span> -1.0 <span class="token number">6</span>*0 <span class="token comment">#设置初始磁矩</span>
+LORBIT <span class="token operator">=</span> <span class="token number">11</span>
+LCHARG <span class="token operator">=</span> .FALSE.
+LWAVE <span class="token operator">=</span> .FALSE.
+EDIFF <span class="token operator">=</span> <span class="token number">0.00001</span>
+EDIFFG <span class="token operator">=</span> -0.001
+<span class="token assign-left variable">NPAR</span><span class="token operator">=</span><span class="token number">4</span>
+PREC <span class="token operator">=</span> A<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="SOC"><a href="#SOC" class="headerlink" title="SOC"></a>SOC</h3><p>需要使用vasp_ncl版本计算</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">LMAXMIX</span><span class="token operator">=</span><span class="token number">4</span>                <span class="token comment"># 4 for d, and 6 for f element</span>
