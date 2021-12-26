@@ -379,14 +379,14 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2021-03-18
+                    2021-12-26
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    4.1k
+                    4k
                 </div>
                 
 
@@ -427,25 +427,25 @@
 <p>ka~15埃，for insulators</p>
 <p><strong>几何结构优化</strong>：EDIFF = 1E-5</p>
 <p><strong>过渡态和频率计算</strong>：EDIFF = 1E-6或1E-7</p>
-<h2 id="磁性计算"><a href="#磁性计算" class="headerlink" title="磁性计算"></a>磁性计算</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">SYSTEM <span class="token operator">=</span> N2P
-ENCUT <span class="token operator">=</span> <span class="token number">520</span>
-ISTART <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> ICHARG <span class="token operator">=</span> <span class="token number">2</span>
-ISMEAR <span class="token operator">=</span> <span class="token number">0</span>
-<span class="token assign-left variable">SIGMA</span><span class="token operator">=</span><span class="token number">0.05</span>
-<span class="token assign-left variable">NSW</span><span class="token operator">=</span><span class="token number">100</span>
-<span class="token comment">#PRECSYM=0.01</span>
-IBRION <span class="token operator">=</span> <span class="token number">2</span>
-ISIF <span class="token operator">=</span> <span class="token number">2</span>
-VOSKOWN <span class="token operator">=</span> <span class="token number">1</span>
-ISPIN <span class="token operator">=</span> <span class="token number">2</span>
-MAGMOM <span class="token operator">=</span> <span class="token number">1.0</span> -1.0 <span class="token number">1.0</span> -1.0 <span class="token number">6</span>*0 <span class="token comment">#设置初始磁矩</span>
-LORBIT <span class="token operator">=</span> <span class="token number">11</span>
-LCHARG <span class="token operator">=</span> .FALSE.
-LWAVE <span class="token operator">=</span> .FALSE.
-EDIFF <span class="token operator">=</span> <span class="token number">0.00001</span>
-EDIFFG <span class="token operator">=</span> -0.001
-<span class="token assign-left variable">NPAR</span><span class="token operator">=</span><span class="token number">4</span>
-PREC <span class="token operator">=</span> A<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
+<h2 id="磁性计算"><a href="#磁性计算" class="headerlink" title="磁性计算"></a>磁性计算</h2><pre class="line-numbers language-shell" data-language="shell"><code class="language-shell">SYSTEM &#x3D; N2P
+ENCUT &#x3D; 520
+ISTART &#x3D; 0; ICHARG &#x3D; 2
+ISMEAR &#x3D; 0
+SIGMA&#x3D;0.05
+NSW&#x3D;100
+#PRECSYM&#x3D;0.01
+IBRION &#x3D; 2
+ISIF &#x3D; 2
+VOSKOWN &#x3D; 1
+ISPIN &#x3D; 2
+MAGMOM &#x3D; 1.0 -1.0 1.0 -1.0 6*0 #设置初始磁矩
+LORBIT &#x3D; 11
+LCHARG &#x3D; .FALSE.
+LWAVE &#x3D; .FALSE.
+EDIFF &#x3D; 0.00001
+EDIFFG &#x3D; -0.001
+NPAR&#x3D;4
+PREC &#x3D; A<span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
 <h3 id="SOC"><a href="#SOC" class="headerlink" title="SOC"></a>SOC</h3><p>需要使用vasp_ncl版本计算</p>
 <pre class="line-numbers language-bash" data-language="bash"><code class="language-bash"><span class="token assign-left variable">LMAXMIX</span><span class="token operator">=</span><span class="token number">4</span>                <span class="token comment"># 4 for d, and 6 for f element</span>
@@ -491,9 +491,7 @@ NBANDS <span class="token operator">=</span> <span class="token number">2</span>
 <span class="token assign-left variable">GGA_COMPAT</span><span class="token operator">=</span>.FALSE. <span class="token comment"># it improves the numerical precision of GGA for non collinear calculations  </span>
 <span class="token assign-left variable">LORBMOM</span><span class="token operator">=</span>.TRUE.  <span class="token comment">#计算轨道磁矩</span><span aria-hidden="true" class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span></code></pre>
 
-<p>继续计算，VASP会读取WAVECAR 和 CHGCAR将自旋量子化方向（磁场方向）平行于SAXIS方向。<br>最后可以比较各个方向磁矩时能量的不同。<br>注意： 第二步使用自洽计算(ICHARG=1)原则上也是可以的，但是初始平行于SAXIS的磁场发生旋转，直到达到基态，如平行于易磁化轴，但这个过程会很慢且能量变化很小，而且如果收敛标准不是很严格的话，自洽计算会在未达到基态就停止。<br> 注意： VASP的输入输出的磁矩和类自旋量都会按照这个SAXIS方向，包括INCAR中的<br>MAGMOM行，OUTCAR和PROCAR文件中的总磁矩和局域磁矩，WAVECAR中的类自旋轨道和CHGCAR中的磁性密度。</p>
-<p>问题：<br> ①第一步线性计算得到WAVECAR 和 CHGCAR文件，必须是静态计算的WAVECAR 和 CHGCAR文件吗？ 动态优化的可不可以？静态计算需要使用NUPDOWN 锁定磁矩吗？<br>②进行非线性磁矩或自旋轨道耦合计算的时候，结构需不需要重新优化？  </p>
-<p>我现在的做法是：<br>先加入LMAXMIX = 4结构优化，然后仍然使用 LMAXMIX = 4 静态计算<br>（ICHARG=2，LWAVE=.TRUE.,LCHARG=.TRUE.），<br>然后进行高收敛标准的静态的soc自洽计算来考虑soc的影响，也不知对不对。</p>
+<p>继续计算，VASP会读取WAVECAR 和 CHGCAR将自旋量子化方向（磁场方向）平行于SAXIS方向。<br>最后可以比较各个方向磁矩时能量的不同。<br>注意： 第二步使用自洽计算(ICHARG=1)原则上也是可以的，但是初始平行于SAXIS的磁场发生旋转，直到达到基态，如平行于易磁化轴，但这个过程会很慢且能量变化很小，而且如果收敛标准不是很严格的话，自洽计算会在未达到基态就停止。<br>注意： VASP的输入输出的磁矩和类自旋量都会按照这个SAXIS方向，包括INCAR中的MAGMOM行，OUTCAR和PROCAR文件中的总磁矩和局域磁矩，WAVECAR中的类自旋轨道和CHGCAR中的磁性密度。</p>
 <h2 id="MD计算"><a href="#MD计算" class="headerlink" title="MD计算"></a>MD计算</h2><pre class="line-numbers language-bash" data-language="bash"><code class="language-bash">SYSTEM <span class="token operator">=</span> CaCl-graphene
 ENCUT <span class="token operator">=</span> <span class="token number">520</span>
 IALGO  <span class="token operator">=</span> <span class="token number">48</span>
@@ -1333,7 +1331,7 @@ EINT <span class="token operator">=</span> -1
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">11.5k</span>&nbsp;字
+                class="white-color">12.3k</span>&nbsp;字
             
             
             
